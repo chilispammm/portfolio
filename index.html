@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wayne Chilionje — Data & AI · Digital Systems · Analytics</title>
+  <style>
+    :root {
+      --bg: #090a10;
+      --card-bg: #11131c;
+      --border: #1e2233;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #10b981;
+      --accent-dim: rgba(16, 185, 129, 0.1);
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.1);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 3.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container { width: 100%; max-width: 860px; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .meta-bar a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--text-muted);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .meta-bar a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .lead-box {
+      background: var(--card-bg);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .lead-box h2 {
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .lead-box p {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .lead-box p:last-child { margin-bottom: 0; }
+
+    section { margin-bottom: 3.5rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .item-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .item-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .badge-live {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-private {
+      background: var(--amber-dim);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .item-role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .bullet-list li {
+      margin-bottom: 0.4rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .item-link:hover { text-decoration: underline; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 680px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .capability-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .capability-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .capability-card .tech-stack {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .capability-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      background: var(--border);
+      color: var(--text);
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+    }
+
+    .what-build-item {
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .what-build-item:hover { border-left-color: var(--accent); }
+
+    .what-build-item h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .what-build-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="kicker">Capabilities Briefing & Portfolio</div>
+      <h1>Wayne Chilionje</h1>
+      <div class="subtitle">Data & AI · Digital Systems · Analytics</div>
+      <div class="meta-bar">
+        <span>Nairobi, Kenya</span>
+        <a href="mailto:waynemataara@gmail.com">waynemataara@gmail.com</a>
+        <span>+254 722 542 336</span>
+        <a href="https://linkedin.com/in/wayne-chilionje" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/chilispammm" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </header>
+
+    <div class="lead-box">
+      <h2>⚡ What I Build</h2>
+      <p>I build practical digital systems that turn messy data and operational problems into usable products — from automated data pipelines and analytical platforms to geospatial intelligence, machine learning systems, and production web applications.</p>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">My work sits at the intersection of Python, data engineering, analytics, AI/ML, geospatial systems, and digital product development, with a focus on building systems that can actually be used rather than just demonstrated.</p>
+    </div>
+
+    <!-- 01 / Selected Work -->
+    <section>
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Selected Work: Deployments & Systems</h2>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Crystal Brands Communications</div>
+          <span class="item-badge badge-live">Live Commercial Client</span>
+        </div>
+        <div class="item-role">Commercial Website · Design & Development · Production Deployment</div>
+        <p>Built and deployed a production website for a Kenyan branding, advertising, and events company.</p>
+        <ul class="bullet-list">
+          <li>Developed a responsive commercial web experience focused on clear service positioning and business enquiries.</li>
+          <li>Structured the site around the company's actual offerings and customer journey.</li>
+          <li>Delivered and maintained a production system rather than a static design concept.</li>
+        </ul>
+        <a class="item-link" href="https://crystalbrands.co.ke/" target="_blank" rel="noopener">crystalbrands.co.ke ↗</a>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">ChiliAnalysis Football Intelligence</div>
+          <span class="item-badge badge-live">Live Platform</span>
+        </div>
+        <div class="item-role">Football Analytics Platform · Data Pipelines · Performance Intelligence</div>
+        <p>An independent football intelligence platform I founded to analyse player performance, identify undervalued talent, and turn football data into scouting and decision-making insights.</p>
+        <ul class="bullet-list">
+          <li>Built automated data acquisition and analysis workflows using Python and web-data extraction.</li>
+          <li>Developed spatial and performance analytics for player evaluation and benchmarking.</li>
+          <li>Produced scouting dossiers comparing Kenyan NSL players against broader African and European performance standards.</li>
+          <li>Published 10+ technical reports generating 10,000+ organic reads.</li>
+        </ul>
+        <a class="item-link" href="https://chilianalysis.co.ke/" target="_blank" rel="noopener">chilianalysis.co.ke ↗</a>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Wanza Farm Management System</div>
+          <span class="item-badge badge-live">Live Interactive Demo</span>
+        </div>
+        <div class="item-role">Operational Intelligence · Python · Data Systems</div>
+        <p>A farm management and decision-support platform built around real operational records.</p>
+        <ul class="bullet-list">
+          <li>Designed relational data structures for livestock, crop, milk-production and operational records.</li>
+          <li>Implemented deterministic validation and reconciliation to preserve source-grounded data.</li>
+          <li>Built an interactive operational interface for analysing farm performance and management information.</li>
+          <li>Separated verified source data from assumptions and derived metrics.</li>
+        </ul>
+        <a class="item-link" href="https://wanza-fms.streamlit.app/" target="_blank" rel="noopener">wanza-fms.streamlit.app ↗</a>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">World Cup 2026 Real-Time Statistical Modelling Engine</div>
+          <span class="item-badge badge-private">Private Client System</span>
+        </div>
+        <div class="item-role">Live Data Streams · Statistical Modelling · Private Engine</div>
+        <p>A football analytics and betting engine developed with a collaborator for the 2026 World Cup.</p>
+        <ul class="bullet-list">
+          <li>Built around live event streams delivered through APIs/WebSockets.</li>
+          <li>Combined statistical scoring models, expected-goals analysis, Bayesian state updating and dynamic market/odds analysis.</li>
+          <li>Designed for low-latency processing of changing match states and real-time decision support.</li>
+        </ul>
+        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--amber); margin-bottom: 0;">
+          🔒 Architecture, modelling methodology, and selected validation material can be demonstrated during technical discussions.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02 / Core Capabilities -->
+    <section>
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Core Capabilities</h2>
+      </div>
+      <div class="grid-2">
+        <div class="capability-card">
+          <h3>Data Engineering & Automation</h3>
+          <div class="tech-stack">Python · SQL · Pandas · DuckDB · PySpark · Playwright · BeautifulSoup · ETL</div>
+          <p>I build systems that collect, transform and deliver data without requiring repetitive manual work.</p>
+          <div class="tag-grid">
+            <span class="tag">Automated Extraction</span>
+            <span class="tag">Web Scraping</span>
+            <span class="tag">API Integration</span>
+            <span class="tag">Schema Validation</span>
+            <span class="tag">Database Workflows</span>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <h3>Analytics & Decision Systems</h3>
+          <div class="tech-stack">Python · R · SQL · Power BI · Tableau · Streamlit · Plotly · Stats Models</div>
+          <p>I turn operational datasets into systems people can actually use to understand performance and make decisions.</p>
+          <div class="tag-grid">
+            <span class="tag">KPI Dashboards</span>
+            <span class="tag">Operational Reporting</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Performance Analytics</span>
+            <span class="tag">BI Dashboards</span>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <h3>AI / Machine Learning</h3>
+          <div class="tech-stack">PyTorch · TensorFlow · scikit-learn · OpenCV · Hugging Face · NLP</div>
+          <p>Applied machine learning focused on solving specific problems rather than modelling for its own sake.</p>
+          <div class="tag-grid">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Predictive Modelling</span>
+            <span class="tag">Classification</span>
+            <span class="tag">AI Evaluation</span>
+            <span class="tag">LLM Workflows</span>
+          </div>
+        </div>
+
+        <div class="capability-card">
+          <h3>Geospatial & Agri Intelligence</h3>
+          <div class="tech-stack">Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask · QGIS · GeoPandas</div>
+          <p>I work with satellite and environmental data to build analytical systems for agriculture and spatial decision-making.</p>
+          <div class="tag-grid">
+            <span class="tag">Crop Stress Triage</span>
+            <span class="tag">Spatial Analysis</span>
+            <span class="tag">Remote Sensing</span>
+            <span class="tag">Environmental Data</span>
+            <span class="tag">Scouting Polygons</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / Technical Projects -->
+    <section>
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Technical Projects & Repositories</h2>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">crop-stress-intelligence-kenya</div>
+          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
+        </div>
+        <div class="item-role">Python · Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask</div>
+        <p>Multi-sensor agricultural intelligence pipeline analysing approximately 503 hectares in Uasin Gishu County.</p>
+        <ul class="bullet-list">
+          <li>Detects and separates rainfall/moisture-driven stress from canopy-level vegetation anomalies.</li>
+          <li>Uses sensor-native spatial resolutions rather than introducing artificial high-resolution interpolation.</li>
+          <li>Includes a 104-test automated validation suite.</li>
+          <li>Produces GeoJSON scouting polygons for field investigation.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">simclr-road-anomaly-detection</div>
+          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
+        </div>
+        <div class="item-role">PyTorch · ResNet · Computer Vision · Self-Supervised Learning</div>
+        <p>Self-supervised computer vision pipeline for infrastructure surface anomaly detection across a 3,000+ pavement image dataset.</p>
+        <ul class="bullet-list">
+          <li>Trained using contrastive representation learning (SimCLR).</li>
+          <li>Evaluated downstream representations through linear evaluation (achieving 99.0% accuracy).</li>
+          <li>Designed as an applied computer-vision workflow rather than a purely theoretical experiment.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">distributed-pyspark-etl</div>
+          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
+        </div>
+        <div class="item-role">PySpark · Docker · DuckDB · Data Engineering</div>
+        <p>Containerised data-processing pipeline designed around high-throughput event ingestion, schema normalisation and analytical querying.</p>
+      </div>
+    </section>
+
+    <!-- 04 / What I Can Build -->
+    <section>
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>What I Can Build For Clients & Teams</h2>
+      </div>
+
+      <div class="what-build-item">
+        <h3>Data & Automation</h3>
+        <p>Python systems, ETL pipelines, scraping, API integrations, automated reporting and data workflows.</p>
+      </div>
+
+      <div class="what-build-item">
+        <h3>Analytics & Dashboards</h3>
+        <p>Operational dashboards, KPI systems, management reporting and decision-support applications.</p>
+      </div>
+
+      <div class="what-build-item">
+        <h3>AI & ML</h3>
+        <p>Computer vision, predictive modelling, statistical systems, AI evaluation and applied ML workflows.</p>
+      </div>
+
+      <div class="what-build-item">
+        <h3>Geospatial & Agriculture</h3>
+        <p>Remote-sensing analysis, GIS systems, agricultural intelligence and spatial decision support.</p>
+      </div>
+
+      <div class="what-build-item">
+        <h3>Digital Products</h3>
+        <p>Production websites and lightweight web applications for organisations that need a functional digital presence.</p>
+      </div>
+
+      <div class="what-build-item">
+        <h3>Sports Intelligence</h3>
+        <p>Football data pipelines, player evaluation, performance analytics, statistical modelling and live-data systems.</p>
+      </div>
+    </section>
+
+    <!-- 05 / Contact -->
+    <footer>
+      <div>
+        <div style="font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Wayne Chilionje</div>
+        <div>Nairobi, Kenya · Available for local engagements and global remote contracts</div>
+      </div>
+      <div>
+        <a href="mailto:waynemataara@gmail.com" style="color: var(--accent); text-decoration: none;">waynemataara@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
