@@ -6,24 +6,34 @@
   <title>Wayne Chilionje — Data & AI · Digital Systems · Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #08080a;
-      --card-bg: #0f1015;
-      --card-hover: #14151d;
-      --border: #1f1f26;
+      --bg: #07080b;
+      --card-bg: rgba(18, 20, 28, 0.72);
+      --card-hover: rgba(24, 27, 38, 0.88);
+      --border: rgba(255, 255, 255, 0.07);
       --border-accent: rgba(223, 183, 67, 0.28);
-      --text: #f4f4f7;
-      --text-muted: #9598a6;
+      --text: #f4f5f8;
+      --text-muted: #9ba1b3;
+      --text-dim: #6d7385;
       --gold: #dfb743;
       --gold-bright: #f5d77f;
       --gold-dim: rgba(223, 183, 67, 0.08);
       --gold-border: rgba(223, 183, 67, 0.22);
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
-      --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --font-heading: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: "JetBrains Mono", Monaco, Consolas, monospace;
+      
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --shadow-apple: 0 4px 24px -1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      --shadow-hover: 0 12px 36px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(223, 183, 67, 0.32);
+      --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -35,9 +45,9 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       line-height: 1.65;
-      padding: 3.5rem 1.5rem;
+      padding: 4rem 1.5rem;
       display: flex;
       justify-content: center;
       -webkit-font-smoothing: antialiased;
@@ -45,13 +55,33 @@
 
     .container {
       width: 100%;
-      max-width: 880px;
+      max-width: 960px;
     }
 
+    /* HEADER & HEADSHOT */
     header {
       border-bottom: 1px solid var(--border);
-      padding-bottom: 2.5rem;
+      padding-bottom: 3rem;
       margin-bottom: 3rem;
+    }
+
+    .header-layout {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 680px) {
+      .header-layout {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .header-text {
+      flex: 1;
     }
 
     .kicker {
@@ -64,16 +94,19 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-family: var(--font-heading);
+      font-size: 2.6rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
       color: #ffffff;
+      line-height: 1.15;
     }
 
     .subtitle {
-      font-size: 1.1rem;
-      font-weight: 400;
+      font-family: var(--font-body);
+      font-size: 1.12rem;
+      font-weight: 300;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
@@ -90,7 +123,7 @@
       color: var(--text);
       text-decoration: none;
       border-bottom: 1px dotted var(--gold);
-      transition: all 0.2s ease;
+      transition: all 0.2s var(--ease-apple);
     }
 
     .meta-bar a:hover {
@@ -98,37 +131,121 @@
       border-bottom-color: var(--gold-bright);
     }
 
+    /* HEADSHOT CONTAINER */
+    .avatar-wrapper {
+      position: relative;
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(223, 183, 67, 0.2), rgba(255, 255, 255, 0.04));
+      padding: 2px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: calc(var(--radius-lg) - 2px);
+      background: #11131a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .avatar-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: var(--font-mono);
+      text-align: center;
+    }
+
+    .avatar-initials {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .avatar-hint {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    /* EDITORIAL MANIFESTO / LEAD BOX */
     .lead-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      padding: 1.4rem 1.6rem;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
       margin-bottom: 3.5rem;
-      border-radius: 0 8px 8px 0;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-apple);
+      position: relative;
+      overflow: hidden;
     }
 
-    .lead-box h2 {
-      font-size: 0.85rem;
+    .lead-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .lead-label {
       font-family: var(--font-mono);
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--gold);
       margin-bottom: 0.6rem;
     }
 
+    .lead-box h2 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .lead-box h2 em {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      color: var(--gold-bright);
+      font-weight: 400;
+    }
+
     .lead-box p {
       font-size: 0.98rem;
-      color: var(--text);
-      margin-bottom: 0.5rem;
+      color: var(--text-muted);
       font-weight: 300;
+      line-height: 1.6;
     }
 
-    .lead-box p:last-child {
-      margin-bottom: 0;
-    }
-
+    /* SECTION SCAFFOLDING */
     section {
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
 
     .section-header {
@@ -147,7 +264,8 @@
       font-weight: 500;
     }
 
-    h2 {
+    h2.section-title {
+      font-family: var(--font-heading);
       font-size: 1.15rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -155,43 +273,71 @@
       color: #ffffff;
     }
 
-    .item {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      margin-bottom: 2rem;
-      transition: border-color 0.25s ease, background-color 0.25s ease;
+    /* 2-COLUMN SELECTED WORK GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
-    .item:hover {
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* APPLE BUTTERY CARD DESIGN */
+    .apple-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      box-shadow: var(--shadow-apple);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.28s var(--ease-apple), border-color 0.28s var(--ease-apple), box-shadow 0.28s var(--ease-apple), background-color 0.28s var(--ease-apple);
+    }
+
+    .apple-card:hover {
+      transform: translateY(-3px);
       border-color: var(--border-accent);
       background-color: var(--card-hover);
+      box-shadow: var(--shadow-hover);
     }
 
     .item-header {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .title-row {
+      display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
       gap: 0.5rem;
-      margin-bottom: 0.25rem;
     }
 
     .item-title {
-      font-size: 1.25rem;
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
       font-weight: 600;
       color: #ffffff;
+      line-height: 1.25;
     }
 
     .item-badge {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       padding: 0.22rem 0.55rem;
-      border-radius: 4px;
+      border-radius: 6px;
       font-weight: 500;
+      white-space: nowrap;
     }
 
     .badge-live {
@@ -208,49 +354,48 @@
 
     .item-role {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--gold);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
     }
 
-    .item p {
-      font-size: 0.94rem;
+    .apple-card p {
+      font-size: 0.92rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
       font-weight: 300;
+      line-height: 1.55;
     }
 
-    /* Visual Snapshot / Mockup Container */
+    /* REFINED SNAPSHOT CONTAINER */
     .snapshot-slot {
-      margin: 1.25rem 0 1.5rem 0;
-      border: 1px dashed var(--border-accent);
-      border-radius: 6px;
-      background: #09090d;
-      min-height: 200px;
+      margin: 1rem 0 1.25rem 0;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(10, 11, 16, 0.85);
+      min-height: 160px;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: all 0.25s ease;
+      transition: all 0.25s var(--ease-apple);
     }
 
-    .snapshot-slot:hover {
-      border-color: var(--gold);
-      background: #0d0e13;
+    .apple-card:hover .snapshot-slot {
+      border-color: var(--gold-border);
+      background: rgba(14, 15, 22, 0.95);
     }
 
-    /* Replace inner snapshot-placeholder with an <img> tag when ready:
-       <img src="assets/preview.png" alt="Preview" class="snapshot-img" /> */
     .snapshot-img {
       width: 100%;
       height: 100%;
-      max-height: 420px;
+      max-height: 240px;
       object-fit: cover;
       display: block;
-      border-radius: 5px;
+      border-radius: calc(var(--radius-sm) - 1px);
     }
 
     .snapshot-placeholder {
@@ -258,38 +403,38 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
-      color: var(--text-muted);
+      gap: 0.4rem;
+      color: var(--text-dim);
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
     }
 
     .snapshot-tag {
-      display: inline-block;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--gold);
       background: var(--gold-dim);
       border: 1px solid var(--gold-border);
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .bullet-list {
       list-style: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
       font-weight: 300;
     }
 
     .bullet-list li {
       margin-bottom: 0.45rem;
-      padding-left: 1.25rem;
+      padding-left: 1.15rem;
       position: relative;
+      line-height: 1.45;
     }
 
     .bullet-list li::before {
@@ -309,42 +454,37 @@
       color: var(--gold);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      transition: border-color 0.2s var(--ease-apple);
     }
 
     .item-link:hover {
       border-bottom-color: var(--gold);
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-
-    @media (min-width: 720px) {
-      .grid-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
+    /* CORE CAPABILITIES STYLING */
     .capability-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: border-color 0.25s ease;
+      box-shadow: var(--shadow-apple);
+      backdrop-filter: blur(12px);
+      transition: transform 0.28s var(--ease-apple), border-color 0.28s var(--ease-apple);
     }
 
     .capability-card:hover {
+      transform: translateY(-2px);
       border-color: var(--border-accent);
     }
 
     .capability-card h3 {
-      font-size: 1.05rem;
+      font-family: var(--font-heading);
+      font-size: 1.08rem;
       font-weight: 600;
       margin-bottom: 0.35rem;
       color: #ffffff;
@@ -352,17 +492,18 @@
 
     .capability-card .tech-stack {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--gold);
       margin-bottom: 0.85rem;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .capability-card p {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
       font-weight: 300;
+      line-height: 1.5;
     }
 
     .tag-grid {
@@ -374,46 +515,64 @@
 
     .tag {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
-      background: #15161d;
+      font-size: 0.68rem;
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 0.2rem 0.5rem;
-      border-radius: 3px;
+      border-radius: 4px;
+    }
+
+    /* WHAT I BUILD / SERVICE PILLARS */
+    .what-build-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 680px) {
+      .what-build-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .what-build-item {
-      border-left: 2px solid var(--border);
-      padding-left: 1.15rem;
-      margin-bottom: 1.35rem;
-      transition: border-left-color 0.25s ease;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.4rem;
+      transition: all 0.25s var(--ease-apple);
     }
 
     .what-build-item:hover {
-      border-left-color: var(--gold);
+      border-color: var(--gold-border);
+      background: rgba(223, 183, 67, 0.03);
     }
 
     .what-build-item h3 {
+      font-family: var(--font-heading);
       font-size: 0.96rem;
       font-weight: 600;
       color: #ffffff;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
     }
 
     .what-build-item p {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       font-weight: 300;
+      line-height: 1.5;
     }
 
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding-top: 2rem;
+      padding-top: 2.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: var(--text-muted);
@@ -422,331 +581,372 @@
 </head>
 <body>
   <div class="container">
+    
+    <!-- HEADER WITH HEADSHOT PROVISION -->
     <header>
-      <div class="kicker">Capabilities Briefing & Portfolio</div>
-      <h1>Wayne Chilionje</h1>
-      <div class="subtitle">Data & AI · Digital Systems · Analytics</div>
-      <div class="meta-bar">
-        <span>Nairobi, Kenya</span>
-        <a href="mailto:waynemataara@gmail.com">waynemataara@gmail.com</a>
-        <span>+254 722 542 336</span>
-        <a href="https://linkedin.com/in/wayne-chilionje" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://github.com/chilispammm" target="_blank" rel="noopener">GitHub ↗</a>
+      <div class="header-layout">
+        <div class="header-text">
+          <div class="kicker">Capabilities Briefing & Portfolio</div>
+          <h1>Wayne Chilionje</h1>
+          <div class="subtitle">Data & AI · Digital Systems · Analytics</div>
+          <div class="meta-bar">
+            <span>Nairobi, Kenya</span>
+            <a href="mailto:waynemataara@gmail.com">waynemataara@gmail.com</a>
+            <span>+254 722 542 336</span>
+            <a href="https://linkedin.com/in/wayne-chilionje" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/chilispammm" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- Headshot Provision -->
+        <div class="avatar-wrapper">
+          <div class="avatar-inner">
+            <!-- When headshot is ready, replace contents with:
+                 <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje" class="avatar-img" /> -->
+            <div class="avatar-placeholder">
+              <span class="avatar-initials">WC</span>
+              <span class="avatar-hint">Photo Slot</span>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
+    <!-- CORE FOCUS MANIFESTO (NO EMOJI) -->
     <div class="lead-box">
-      <h2>⚡ What I Build</h2>
-      <p>I build practical digital systems that turn messy data and operational problems into usable products — from automated data pipelines and analytical platforms to geospatial intelligence, machine learning systems, and production web applications.</p>
-      <p style="color: var(--text-muted); font-size: 0.92rem;">My work sits at the intersection of Python, data engineering, analytics, AI/ML, geospatial systems, and digital product development, with a focus on building systems that can actually be used rather than just demonstrated.</p>
+      <div class="lead-label">Core Engineering Focus</div>
+      <h2>From raw operational datasets to <em>deterministic products</em>.</h2>
+      <p>I build practical digital systems that turn messy data and operational bottlenecks into reliable tools — from automated data acquisition pipelines and analytical engines to geospatial intelligence, applied machine learning systems, and production web applications.</p>
     </div>
 
-    <!-- 01 / Selected Work -->
+    <!-- 01 / SELECTED WORK (2 COLUMNS) -->
     <section>
       <div class="section-header">
         <span class="section-num">01</span>
-        <h2>Selected Work: Deployments & Systems</h2>
+        <h2 class="section-title">Selected Work: Deployments & Systems</h2>
       </div>
 
-      <!-- Crystal Brands -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Crystal Brands Communications</div>
-          <span class="item-badge badge-live">Live Commercial Client</span>
-        </div>
-        <div class="item-role">Commercial Website · Design & Development · Production Deployment</div>
-        <p>Built and deployed a production website for a Kenyan branding, advertising, and events company.</p>
+      <div class="grid-2">
+        <!-- Card 1: Crystal Brands -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">Crystal Brands Communications</div>
+                <span class="item-badge badge-live">Live Client</span>
+              </div>
+              <div class="item-role">Commercial Web Platform · Production Deployment</div>
+            </div>
+            <p>Production corporate platform for an established Kenyan branding, advertising, and events firm.</p>
 
-        <!-- Snapshot Slot: Crystal Brands -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/crystalbrands-preview.png" alt="Crystal Brands Web Interface" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Visual Snapshot</span>
-            <span>crystalbrands.co.ke — Production Interface</span>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/crystalbrands-preview.png" alt="Crystal Brands" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag">Interface Snapshot</span>
+                <span>crystalbrands.co.ke — Production Web App</span>
+              </div>
+            </div>
+
+            <ul class="bullet-list">
+              <li>Engineered responsive commercial architecture focused on brand positioning and automated business inquiry routing.</li>
+              <li>Structured digital catalog around actual production offerings and corporate procurement workflows.</li>
+              <li>Actively maintained production system with continuous uptime stability.</li>
+            </ul>
           </div>
+          <a class="item-link" href="https://crystalbrands.co.ke/" target="_blank" rel="noopener">crystalbrands.co.ke ↗</a>
         </div>
 
-        <ul class="bullet-list">
-          <li>Developed a responsive commercial web experience focused on clear service positioning and business enquiries.</li>
-          <li>Structured the site around the company's actual offerings and customer journey.</li>
-          <li>Delivered and maintained a production system rather than a static design concept.</li>
-        </ul>
-        <a class="item-link" href="https://crystalbrands.co.ke/" target="_blank" rel="noopener">crystalbrands.co.ke ↗</a>
-      </div>
+        <!-- Card 2: ChiliAnalysis -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">ChiliAnalysis Football Intelligence</div>
+                <span class="item-badge badge-live">Live Platform</span>
+              </div>
+              <div class="item-role">Sports Analytics Platform · Automated Telemetry Pipelines</div>
+            </div>
+            <p>Independent football intelligence platform combining automated web extraction, spatial tracking, and physical performance modeling.</p>
 
-      <!-- ChiliAnalysis -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">ChiliAnalysis Football Intelligence</div>
-          <span class="item-badge badge-live">Live Platform</span>
-        </div>
-        <div class="item-role">Football Analytics Platform · Data Pipelines · Performance Intelligence</div>
-        <p>An independent football intelligence platform I founded to analyse player performance, identify undervalued talent, and turn football data into scouting and decision-making insights.</p>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/chilianalysis-preview.png" alt="ChiliAnalysis" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag">Platform Snapshot</span>
+                <span>chilianalysis.co.ke — Match Event Stream & Spatial Maps</span>
+              </div>
+            </div>
 
-        <!-- Snapshot Slot: ChiliAnalysis -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/chilianalysis-preview.png" alt="ChiliAnalysis Analytics Platform" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Visual Snapshot</span>
-            <span>chilianalysis.co.ke — Event Stream & Tactical Telemetry Dashboard</span>
+            <ul class="bullet-list">
+              <li>Engineered automated extraction workflows collecting frame-by-frame match events and Opta matrices.</li>
+              <li>Developed spatial analytics and player evaluation dossiers benchmarking Kenyan NSL players against CAF and European standards.</li>
+              <li>Authored 10+ published technical dossiers generating 10,000+ organic technical reads.</li>
+            </ul>
           </div>
+          <a class="item-link" href="https://chilianalysis.co.ke/" target="_blank" rel="noopener">chilianalysis.co.ke ↗</a>
         </div>
 
-        <ul class="bullet-list">
-          <li>Built automated data acquisition and analysis workflows using Python and web-data extraction.</li>
-          <li>Developed spatial and performance analytics for player evaluation and benchmarking.</li>
-          <li>Produced scouting dossiers comparing Kenyan NSL players against broader African and European performance standards.</li>
-          <li>Published 10+ technical reports generating 10,000+ organic reads.</li>
-        </ul>
-        <a class="item-link" href="https://chilianalysis.co.ke/" target="_blank" rel="noopener">chilianalysis.co.ke ↗</a>
-      </div>
+        <!-- Card 3: Wanza FMS -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">Wanza Farm Management System</div>
+                <span class="item-badge badge-live">Live Demo</span>
+              </div>
+              <div class="item-role">Decision Intelligence · Relational Schemas · Operations MVP</div>
+            </div>
+            <p>Operational decision-support platform designed to consolidate complex farm records into an actionable command center.</p>
 
-      <!-- Wanza FMS -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Wanza Farm Management System</div>
-          <span class="item-badge badge-live">Live Interactive Demo</span>
-        </div>
-        <div class="item-role">Operational Intelligence · Python · Data Systems</div>
-        <p>A farm management and decision-support platform built around real operational records.</p>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/wanza-preview.png" alt="Wanza FMS" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag">Operational Demo</span>
+                <span>wanza-fms.streamlit.app — Herd Census & Input Ledger</span>
+              </div>
+            </div>
 
-        <!-- Snapshot Slot: Wanza FMS -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/wanza-preview.png" alt="Wanza FMS Dashboard" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Visual Snapshot</span>
-            <span>wanza-fms.streamlit.app — Agricultural Reconciliation & Herd Census Operations</span>
+            <ul class="bullet-list">
+              <li>Designed relational data schemas reconciling livestock records, lactation outputs, crop inputs, and farm expenses.</li>
+              <li>Implemented deterministic data validation separating documented source truth from missing inputs and assumptions.</li>
+              <li>Built automated verification test suites covering complex business logic and edge-case exceptions.</li>
+            </ul>
           </div>
+          <a class="item-link" href="https://wanza-fms.streamlit.app/" target="_blank" rel="noopener">wanza-fms.streamlit.app ↗</a>
         </div>
 
-        <ul class="bullet-list">
-          <li>Designed relational data structures for livestock, crop, milk-production and operational records.</li>
-          <li>Implemented deterministic validation and reconciliation to preserve source-grounded data.</li>
-          <li>Built an interactive operational interface for analysing farm performance and management information.</li>
-          <li>Separated verified source data from assumptions and derived metrics.</li>
-        </ul>
-        <a class="item-link" href="https://wanza-fms.streamlit.app/" target="_blank" rel="noopener">wanza-fms.streamlit.app ↗</a>
-      </div>
+        <!-- Card 4: World Cup 2026 Engine -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">World Cup 2026 Statistical Engine</div>
+                <span class="item-badge badge-private">Private System</span>
+              </div>
+              <div class="item-role">Live Streams · Dixon-Coles & Bayesian Models · Private Engine</div>
+            </div>
+            <p>High-frequency football analytics and predictive modeling engine built for live tournament match states.</p>
 
-      <!-- World Cup 2026 Engine -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">World Cup 2026 Real-Time Statistical Modelling Engine</div>
-          <span class="item-badge badge-private">Private Client System</span>
-        </div>
-        <div class="item-role">Live Data Streams · Statistical Modelling · Private Engine</div>
-        <p>A football analytics and betting engine developed with a collaborator for the 2026 World Cup.</p>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/wc26-diagram.png" alt="System Flowchart" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag" style="border-color: rgba(229,168,59,0.3); color: var(--amber);">Architecture Diagram Slot</span>
+                <span>WebSocket Stream Ingestion & Low-Latency State Updates</span>
+              </div>
+            </div>
 
-        <!-- Snapshot Slot: World Cup 2026 Engine -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/wc26-architecture.png" alt="WC2026 System Flowchart" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag" style="border-color: rgba(229,168,59,0.3); color: var(--amber);">Architecture Diagram Slot</span>
-            <span>WebSocket Event Ingestion & Bayesian Odds State Architecture</span>
+            <ul class="bullet-list">
+              <li>Processes high-frequency match feeds and live odds streams via WebSockets and REST APIs.</li>
+              <li>Coupled bivariate Dixon-Coles goal-scoring models with real-time Bayesian state updating and expected goals (xG).</li>
+              <li>Engineered for deterministic low-latency execution under dynamic market shifts.</li>
+            </ul>
           </div>
+          <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--amber); margin-top: auto; padding-top: 0.5rem;">
+            🔒 Methodology demonstrated on request during technical discussions.
+          </span>
         </div>
-
-        <ul class="bullet-list">
-          <li>Built around live event streams delivered through APIs/WebSockets.</li>
-          <li>Combined statistical scoring models, expected-goals analysis, Bayesian state updating and dynamic market/odds analysis.</li>
-          <li>Designed for low-latency processing of changing match states and real-time decision support.</li>
-        </ul>
-        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--amber); margin-bottom: 0;">
-          🔒 Architecture, modelling methodology, and selected validation material can be demonstrated during technical discussions.
-        </p>
       </div>
     </section>
 
-    <!-- 02 / Core Capabilities -->
+    <!-- 02 / CORE CAPABILITIES -->
     <section>
       <div class="section-header">
         <span class="section-num">02</span>
-        <h2>Core Capabilities</h2>
+        <h2 class="section-title">Core Capabilities & Technical Stack</h2>
       </div>
       <div class="grid-2">
+        <!-- Football Analytics (Added) -->
+        <div class="capability-card">
+          <div>
+            <h3>Football Analytics & Sports Intelligence</h3>
+            <div class="tech-stack">Python · Opta Matrix Extraction · YOLOv8 · DuckDB · Pitch Control · xG</div>
+            <p>End-to-end sports data engineering: from reverse-engineering live feeds and video tracking to tactical and kinematic scouting dossiers.</p>
+          </div>
+          <div class="tag-grid">
+            <span class="tag">Event Telemetry</span>
+            <span class="tag">Dixon-Coles Modeling</span>
+            <span class="tag">YOLOv8 Detection</span>
+            <span class="tag">Scouting Dossiers</span>
+            <span class="tag">NSL Benchmarking</span>
+          </div>
+        </div>
+
+        <!-- Data Engineering -->
         <div class="capability-card">
           <div>
             <h3>Data Engineering & Automation</h3>
-            <div class="tech-stack">Python · SQL · Pandas · DuckDB · PySpark · Playwright · BeautifulSoup · ETL</div>
-            <p>I build systems that collect, transform and deliver data without requiring repetitive manual work.</p>
+            <div class="tech-stack">Python · SQL · DuckDB · PySpark · Playwright · BeautifulSoup · Docker · ETL</div>
+            <p>Production data systems that automate data acquisition, reverse-engineer undocumented endpoints, and eliminate manual processing backlogs.</p>
           </div>
           <div class="tag-grid">
-            <span class="tag">Automated Extraction</span>
-            <span class="tag">Web Scraping</span>
-            <span class="tag">API Integration</span>
+            <span class="tag">Web Data Extraction</span>
+            <span class="tag">API Reverse Engineering</span>
             <span class="tag">Schema Validation</span>
-            <span class="tag">Database Workflows</span>
+            <span class="tag">Automated ETL</span>
+            <span class="tag">Anti-Bot Mitigation</span>
           </div>
         </div>
 
+        <!-- Analytics & Statistical Systems (Power BI removed, Dixon-Coles & hierarchical added) -->
         <div class="capability-card">
           <div>
-            <h3>Analytics & Decision Systems</h3>
-            <div class="tech-stack">Python · R · SQL · Power BI · Tableau · Streamlit · Plotly · Stats Models</div>
-            <p>I turn operational datasets into systems people can actually use to understand performance and make decisions.</p>
+            <h3>Analytics, Statistics & Decision Systems</h3>
+            <div class="tech-stack">Python · R · SQL · Streamlit · Tableau · Plotly · Dixon-Coles · Bayesian</div>
+            <p>Rigorous applied statistics, hierarchical models, and decision-support applications turning messy operational data into verifiable signals.</p>
           </div>
           <div class="tag-grid">
-            <span class="tag">KPI Dashboards</span>
-            <span class="tag">Operational Reporting</span>
-            <span class="tag">Forecasting</span>
-            <span class="tag">Performance Analytics</span>
-            <span class="tag">BI Dashboards</span>
+            <span class="tag">Hierarchical Models</span>
+            <span class="tag">Bivariate Poisson</span>
+            <span class="tag">Forecasting Workflows</span>
+            <span class="tag">Interactive Dashboards</span>
+            <span class="tag">Forensic Auditing</span>
           </div>
         </div>
 
+        <!-- AI & ML (NLP added) -->
         <div class="capability-card">
           <div>
-            <h3>AI / Machine Learning</h3>
-            <div class="tech-stack">PyTorch · TensorFlow · scikit-learn · OpenCV · Hugging Face · NLP</div>
-            <p>Applied machine learning focused on solving specific problems rather than modelling for its own sake.</p>
+            <h3>AI, Machine Learning & NLP</h3>
+            <div class="tech-stack">PyTorch · OpenCV · spaCy · Sentence-BERT · scikit-learn · Hugging Face · YOLOv8</div>
+            <p>Practical machine learning: contrastive representation learning, computer vision object detection, NLP semantic extraction, and LLM evaluation.</p>
           </div>
           <div class="tag-grid">
+            <span class="tag">Natural Language Processing</span>
             <span class="tag">Computer Vision</span>
-            <span class="tag">Predictive Modelling</span>
-            <span class="tag">Classification</span>
-            <span class="tag">AI Evaluation</span>
-            <span class="tag">LLM Workflows</span>
+            <span class="tag">Self-Supervised (SimCLR)</span>
+            <span class="tag">Model Evaluation</span>
+            <span class="tag">Entity Categorization</span>
           </div>
         </div>
 
-        <div class="capability-card">
+        <!-- Geospatial -->
+        <div class="capability-card" style="grid-column: 1 / -1;">
           <div>
-            <h3>Geospatial & Agri Intelligence</h3>
-            <div class="tech-stack">Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask · QGIS · GeoPandas</div>
-            <p>I work with satellite and environmental data to build analytical systems for agriculture and spatial decision-making.</p>
+            <h3>Geospatial & Agricultural Intelligence</h3>
+            <div class="tech-stack">Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask · QGIS · GeoPandas · Cloud-Native STAC</div>
+            <p>Multi-sensor satellite raster processing and environmental data pipelines for food security, crop-stress screening, and spatial triage.</p>
           </div>
           <div class="tag-grid">
-            <span class="tag">Crop Stress Triage</span>
-            <span class="tag">Spatial Analysis</span>
-            <span class="tag">Remote Sensing</span>
-            <span class="tag">Environmental Data</span>
+            <span class="tag">Satellite Raster Triage</span>
+            <span class="tag">Soil Moisture Anomaly</span>
             <span class="tag">Scouting Polygons</span>
+            <span class="tag">Resolution-Honest Processing</span>
+            <span class="tag">FAO RuralInvest & MAFAP</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 03 / Technical Projects -->
+    <!-- 03 / TECHNICAL PROJECTS -->
     <section>
       <div class="section-header">
         <span class="section-num">03</span>
-        <h2>Technical Projects & Repositories</h2>
+        <h2 class="section-title">Technical Repositories & Evidence</h2>
       </div>
 
-      <!-- Project 1 -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">crop-stress-intelligence-kenya</div>
-          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
-        </div>
-        <div class="item-role">Python · Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask</div>
-        <p>Multi-sensor agricultural intelligence pipeline analysing approximately 503 hectares in Uasin Gishu County.</p>
+      <div class="grid-2">
+        <!-- Project 1 -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">crop-stress-intelligence-kenya</div>
+              </div>
+              <div class="item-role">Python · Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask</div>
+            </div>
+            <p>Multi-modal Earth observation pipeline analyzing ~503 hectares in Uasin Gishu County. Distinguishes soil-moisture deficits from canopy stress.</p>
 
-        <!-- Snapshot Slot: Crop Stress Intelligence -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/crop-stress-preview.png" alt="Satellite Anomaly Maps" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Raster / Heatmap Snapshot</span>
-            <span>Uasin Gishu 503-Hectare Scouting Polygons & Soil Moisture Persistence</span>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/crop-stress-map.png" alt="Satellite Anomaly Maps" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag">Raster / Heatmap Snapshot</span>
+                <span>Uasin Gishu 503-Hectare Scouting Polygons</span>
+              </div>
+            </div>
+
+            <ul class="bullet-list">
+              <li>Backed by a 104-test automated pytest validation suite.</li>
+              <li>Employs sensor-native resolutions rather than artificial interpolation.</li>
+              <li>Generates 28 actionable GeoJSON scouting polygons for field verification.</li>
+            </ul>
           </div>
+          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
-        <ul class="bullet-list">
-          <li>Detects and separates rainfall/moisture-driven stress from canopy-level vegetation anomalies.</li>
-          <li>Uses sensor-native spatial resolutions rather than introducing artificial high-resolution interpolation.</li>
-          <li>Includes a 104-test automated validation suite.</li>
-          <li>Produces GeoJSON scouting polygons for field investigation.</li>
-        </ul>
-      </div>
+        <!-- Project 2 -->
+        <div class="apple-card">
+          <div>
+            <div class="item-header">
+              <div class="title-row">
+                <div class="item-title">simclr-road-anomaly-detection</div>
+              </div>
+              <div class="item-role">PyTorch · ResNet18 · Self-Supervised Vision</div>
+            </div>
+            <p>Self-supervised representation learning framework evaluating pavement crack anomalies across 3,000+ infrastructure images.</p>
 
-      <!-- Project 2 -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">simclr-road-anomaly-detection</div>
-          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
-        </div>
-        <div class="item-role">PyTorch · ResNet · Computer Vision · Self-Supervised Learning</div>
-        <p>Self-supervised computer vision pipeline for infrastructure surface anomaly detection across a 3,000+ pavement image dataset.</p>
+            <div class="snapshot-slot">
+              <!-- <img src="assets/simclr-plot.png" alt="SimCLR Clusters" class="snapshot-img" /> -->
+              <div class="snapshot-placeholder">
+                <span class="snapshot-tag">Computer Vision / t-SNE Plot</span>
+                <span>Contrastive Feature Separation & Anomaly Clusters</span>
+              </div>
+            </div>
 
-        <!-- Snapshot Slot: SimCLR Anomaly -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/simclr-preview.png" alt="SimCLR t-SNE Clustering" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Computer Vision / t-SNE Plot</span>
-            <span>Contrastive Feature Separation & Pavement Crack Anomaly Embeddings</span>
+            <ul class="bullet-list">
+              <li>Trained using contrastive representation learning (SimCLR).</li>
+              <li>Achieved 99.0% downstream linear evaluation classification accuracy.</li>
+              <li>Designed as a production-grade CV pipeline with PCA/t-SNE validation.</li>
+            </ul>
           </div>
-        </div>
-
-        <ul class="bullet-list">
-          <li>Trained using contrastive representation learning (SimCLR).</li>
-          <li>Evaluated downstream representations through linear evaluation (achieving 99.0% accuracy).</li>
-          <li>Designed as an applied computer-vision workflow rather than a purely theoretical experiment.</li>
-        </ul>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">distributed-pyspark-etl</div>
-          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">Codebase ↗</a>
-        </div>
-        <div class="item-role">PySpark · Docker · DuckDB · Data Engineering</div>
-        <p>Containerised data-processing pipeline designed around high-throughput event ingestion, schema normalisation and analytical querying.</p>
-
-        <!-- Snapshot Slot: PySpark ETL -->
-        <div class="snapshot-slot">
-          <!-- When screenshot is available: <img src="assets/pyspark-architecture.png" alt="Pipeline Flow" class="snapshot-img"> -->
-          <div class="snapshot-placeholder">
-            <span class="snapshot-tag">Architecture Snapshot</span>
-            <span>Dockerized Streaming Schema Validation & JSON Transformation DAG</span>
-          </div>
+          <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- 04 / What I Can Build -->
+    <!-- 04 / WHAT I CAN BUILD FOR TEAMS -->
     <section>
       <div class="section-header">
         <span class="section-num">04</span>
-        <h2>What I Can Build For Clients & Teams</h2>
+        <h2 class="section-title">What I Build For Clients & Teams</h2>
       </div>
 
-      <div class="what-build-item">
-        <h3>Data & Automation</h3>
-        <p>Python systems, ETL pipelines, scraping, API integrations, automated reporting and data workflows.</p>
-      </div>
+      <div class="what-build-grid">
+        <div class="what-build-item">
+          <h3>Sports & Football Intelligence</h3>
+          <p>Event data pipelines, player kinematic profiling, expected-goals models, and real-time tournament predictive engines.</p>
+        </div>
 
-      <div class="what-build-item">
-        <h3>Analytics & Dashboards</h3>
-        <p>Operational dashboards, KPI systems, management reporting and decision-support applications.</p>
-      </div>
+        <div class="what-build-item">
+          <h3>Data Engineering & Automation</h3>
+          <p>Resilient web scraping, API reverse-engineering, automated data extraction, and scheduled reporting pipelines.</p>
+        </div>
 
-      <div class="what-build-item">
-        <h3>AI & ML</h3>
-        <p>Computer vision, predictive modelling, statistical systems, AI evaluation and applied ML workflows.</p>
-      </div>
+        <div class="what-build-item">
+          <h3>Analytics & Decision Dashboards</h3>
+          <p>Operational decision tools, statistical forecasting models, and interactive KPI applications that replace messy spreadsheets.</p>
+        </div>
 
-      <div class="what-build-item">
-        <h3>Geospatial & Agriculture</h3>
-        <p>Remote-sensing analysis, GIS systems, agricultural intelligence and spatial decision support.</p>
-      </div>
+        <div class="what-build-item">
+          <h3>Applied AI & Computer Vision</h3>
+          <p>Object detection, contrastive anomaly detection, NLP semantic extraction, and LLM evaluation pipelines.</p>
+        </div>
 
-      <div class="what-build-item">
-        <h3>Digital Products</h3>
-        <p>Production websites and lightweight web applications for organisations that need a functional digital presence.</p>
-      </div>
+        <div class="what-build-item">
+          <h3>Geospatial & Agri Intelligence</h3>
+          <p>Multi-sensor Earth observation, drought and vegetation triage, remote sensing analytics, and field scouting systems.</p>
+        </div>
 
-      <div class="what-build-item">
-        <h3>Sports Intelligence</h3>
-        <p>Football data pipelines, player evaluation, performance analytics, statistical modelling and live-data systems.</p>
+        <div class="what-build-item">
+          <h3>Production Digital Products</h3>
+          <p>Performant commercial websites and lightweight analytical web apps for businesses needing real credibility.</p>
+        </div>
       </div>
     </section>
 
-    <!-- 05 / Contact -->
+    <!-- 05 / FOOTER -->
     <footer>
       <div>
         <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.25rem;">Wayne Chilionje</div>
-        <div>Nairobi, Kenya · Available for local engagements and global remote contracts</div>
+        <div style="font-weight: 300;">Nairobi, Kenya · Available for technical engagements & worldwide remote contracts</div>
       </div>
       <div>
         <a href="mailto:waynemataara@gmail.com" style="color: var(--gold); text-decoration: none;">waynemataara@gmail.com</a>
