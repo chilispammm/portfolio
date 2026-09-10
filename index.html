@@ -58,7 +58,7 @@
       max-width: 960px;
     }
 
-    /* HEADER & HEADSHOT */
+    /* HEADER */
     header {
       border-bottom: 1px solid var(--border);
       padding-bottom: 3rem;
@@ -95,17 +95,17 @@
 
     h1 {
       font-family: var(--font-heading);
-      font-size: 2.6rem;
-      font-weight: 700;
+      font-size: 2.35rem;
+      font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 0.4rem;
       color: #ffffff;
-      line-height: 1.15;
+      line-height: 1.2;
     }
 
     .subtitle {
       font-family: var(--font-body);
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       font-weight: 300;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
@@ -131,14 +131,14 @@
       border-bottom-color: var(--gold-bright);
     }
 
-    /* HEADSHOT CONTAINER */
+    /* HEADSHOT AVATAR */
     .avatar-wrapper {
       position: relative;
       flex-shrink: 0;
-      width: 120px;
-      height: 120px;
+      width: 124px;
+      height: 124px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(223, 183, 67, 0.2), rgba(255, 255, 255, 0.04));
+      background: linear-gradient(135deg, rgba(223, 183, 67, 0.25), rgba(255, 255, 255, 0.04));
       padding: 2px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
@@ -188,7 +188,7 @@
       margin-top: 2px;
     }
 
-    /* EDITORIAL MANIFESTO / LEAD BOX */
+    /* EDITORIAL MANIFESTO BOX */
     .lead-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -213,7 +213,7 @@
 
     .lead-label {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--gold);
@@ -222,11 +222,11 @@
 
     .lead-box h2 {
       font-family: var(--font-heading);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: #ffffff;
       margin-bottom: 0.75rem;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     .lead-box h2 em {
@@ -237,13 +237,13 @@
     }
 
     .lead-box p {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: var(--text-muted);
       font-weight: 300;
       line-height: 1.6;
     }
 
-    /* SECTION SCAFFOLDING */
+    /* SECTIONS */
     section {
       margin-bottom: 4.5rem;
     }
@@ -253,27 +253,27 @@
       align-items: baseline;
       gap: 0.75rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.65rem;
-      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .section-num {
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--gold);
       font-weight: 500;
     }
 
     h2.section-title {
       font-family: var(--font-heading);
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-      color: #ffffff;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+      color: #e2e8f0;
     }
 
-    /* 2-COLUMN SELECTED WORK GRID */
+    /* 2-COLUMN GRID */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr;
@@ -286,7 +286,7 @@
       }
     }
 
-    /* APPLE BUTTERY CARD DESIGN */
+    /* CARDS */
     .apple-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -323,10 +323,11 @@
 
     .item-title {
       font-family: var(--font-heading);
-      font-size: 1.22rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: #ffffff;
-      line-height: 1.25;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
     }
 
     .item-badge {
@@ -354,27 +355,27 @@
 
     .item-role {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--gold);
       margin-bottom: 0.75rem;
       line-height: 1.4;
     }
 
     .apple-card p {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
       font-weight: 300;
       line-height: 1.55;
     }
 
-    /* REFINED SNAPSHOT CONTAINER */
+    /* SNAPSHOT CONTAINER */
     .snapshot-slot {
-      margin: 1rem 0 1.25rem 0;
+      margin: 0.9rem 0 1.25rem 0;
       border: 1px dashed var(--border);
       border-radius: var(--radius-sm);
       background: rgba(10, 11, 16, 0.85);
-      min-height: 160px;
+      min-height: 165px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -408,11 +409,11 @@
       text-align: center;
       padding: 1.5rem;
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.74rem;
     }
 
     .snapshot-tag {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: var(--gold);
       background: var(--gold-dim);
       border: 1px solid var(--gold-border);
@@ -424,7 +425,7 @@
 
     .bullet-list {
       list-style: none;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       margin-bottom: 1.2rem;
       font-weight: 300;
@@ -450,7 +451,7 @@
       align-items: center;
       gap: 0.35rem;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--gold);
       text-decoration: none;
       border-bottom: 1px solid transparent;
@@ -463,12 +464,12 @@
       border-bottom-color: var(--gold);
     }
 
-    /* CORE CAPABILITIES STYLING */
+    /* CAPABILITIES */
     .capability-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 1.5rem;
+      padding: 1.45rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -484,24 +485,24 @@
 
     .capability-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 600;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
       color: #ffffff;
     }
 
     .capability-card .tech-stack {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--gold);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.8rem;
       line-height: 1.45;
     }
 
     .capability-card p {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
       font-weight: 300;
       line-height: 1.5;
     }
@@ -509,21 +510,21 @@
     .tag-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.38rem;
       margin-top: auto;
     }
 
     .tag {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 0.2rem 0.5rem;
+      padding: 0.18rem 0.48rem;
       border-radius: 4px;
     }
 
-    /* WHAT I BUILD / SERVICE PILLARS */
+    /* WHAT I BUILD GRID */
     .what-build-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -551,14 +552,14 @@
 
     .what-build-item h3 {
       font-family: var(--font-heading);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-weight: 600;
       color: #ffffff;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
 
     .what-build-item p {
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       font-weight: 300;
       line-height: 1.5;
@@ -582,7 +583,7 @@
 <body>
   <div class="container">
     
-    <!-- HEADER WITH HEADSHOT PROVISION -->
+    <!-- HEADER -->
     <header>
       <div class="header-layout">
         <div class="header-text">
@@ -601,8 +602,7 @@
         <!-- Headshot Provision -->
         <div class="avatar-wrapper">
           <div class="avatar-inner">
-            <!-- When headshot is ready, replace contents with:
-                 <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje" class="avatar-img" /> -->
+            <!-- Swap contents below with <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje" class="avatar-img" /> -->
             <div class="avatar-placeholder">
               <span class="avatar-initials">WC</span>
               <span class="avatar-hint">Photo Slot</span>
@@ -612,7 +612,7 @@
       </div>
     </header>
 
-    <!-- CORE FOCUS MANIFESTO (NO EMOJI) -->
+    <!-- CORE FOCUS MANIFESTO -->
     <div class="lead-box">
       <div class="lead-label">Core Engineering Focus</div>
       <h2>From raw operational datasets to <em>deterministic products</em>.</h2>
@@ -637,10 +637,10 @@
               </div>
               <div class="item-role">Commercial Web Platform · Production Deployment</div>
             </div>
-            <p>Production corporate platform for an established Kenyan branding, advertising, and events firm.</p>
+            <p>Production corporate platform for an established Kenyan branding, advertising, and events firm[cite: 3].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/crystalbrands-preview.png" alt="Crystal Brands" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/crystalbrands-preview.png" alt="Crystal Brands" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Interface Snapshot</span>
                 <span>crystalbrands.co.ke — Production Web App</span>
@@ -648,9 +648,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Engineered responsive commercial architecture focused on brand positioning and automated business inquiry routing.</li>
-              <li>Structured digital catalog around actual production offerings and corporate procurement workflows.</li>
-              <li>Actively maintained production system with continuous uptime stability.</li>
+              <li>Engineered responsive commercial architecture focused on brand positioning and automated business inquiry routing[cite: 3].</li>
+              <li>Structured digital catalog around actual production offerings and corporate procurement workflows[cite: 3].</li>
+              <li>Actively maintained production system with continuous uptime stability[cite: 3].</li>
             </ul>
           </div>
           <a class="item-link" href="https://crystalbrands.co.ke/" target="_blank" rel="noopener">crystalbrands.co.ke ↗</a>
@@ -666,10 +666,10 @@
               </div>
               <div class="item-role">Sports Analytics Platform · Automated Telemetry Pipelines</div>
             </div>
-            <p>Independent football intelligence platform combining automated web extraction, spatial tracking, and physical performance modeling.</p>
+            <p>Independent football intelligence platform combining automated web extraction, spatial tracking, and physical performance modeling[cite: 3, 4].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/chilianalysis-preview.png" alt="ChiliAnalysis" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/chilianalysis-preview.png" alt="ChiliAnalysis" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Platform Snapshot</span>
                 <span>chilianalysis.co.ke — Match Event Stream & Spatial Maps</span>
@@ -677,9 +677,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Engineered automated extraction workflows collecting frame-by-frame match events and Opta matrices.</li>
-              <li>Developed spatial analytics and player evaluation dossiers benchmarking Kenyan NSL players against CAF and European standards.</li>
-              <li>Authored 10+ published technical dossiers generating 10,000+ organic technical reads.</li>
+              <li>Engineered automated extraction workflows collecting frame-by-frame match events and Opta matrices[cite: 4, 5].</li>
+              <li>Developed spatial analytics and player evaluation dossiers benchmarking Kenyan NSL players against CAF and European standards[cite: 1, 4].</li>
+              <li>Authored 10+ published technical dossiers generating 10,000+ organic technical reads[cite: 1].</li>
             </ul>
           </div>
           <a class="item-link" href="https://chilianalysis.co.ke/" target="_blank" rel="noopener">chilianalysis.co.ke ↗</a>
@@ -695,10 +695,10 @@
               </div>
               <div class="item-role">Decision Intelligence · Relational Schemas · Operations MVP</div>
             </div>
-            <p>Operational decision-support platform designed to consolidate complex farm records into an actionable command center.</p>
+            <p>Operational decision-support platform designed to consolidate complex farm records into an actionable command center[cite: 1, 2].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/wanza-preview.png" alt="Wanza FMS" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/wanza-preview.png" alt="Wanza FMS" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Operational Demo</span>
                 <span>wanza-fms.streamlit.app — Herd Census & Input Ledger</span>
@@ -706,9 +706,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Designed relational data schemas reconciling livestock records, lactation outputs, crop inputs, and farm expenses.</li>
-              <li>Implemented deterministic data validation separating documented source truth from missing inputs and assumptions.</li>
-              <li>Built automated verification test suites covering complex business logic and edge-case exceptions.</li>
+              <li>Designed relational data schemas reconciling livestock records, lactation outputs, crop inputs, and farm expenses[cite: 1, 2].</li>
+              <li>Implemented deterministic data validation separating documented source truth from missing inputs and assumptions[cite: 1, 2].</li>
+              <li>Built automated verification test suites covering complex business rules and edge-case exceptions[cite: 1].</li>
             </ul>
           </div>
           <a class="item-link" href="https://wanza-fms.streamlit.app/" target="_blank" rel="noopener">wanza-fms.streamlit.app ↗</a>
@@ -724,10 +724,10 @@
               </div>
               <div class="item-role">Live Streams · Dixon-Coles & Bayesian Models · Private Engine</div>
             </div>
-            <p>High-frequency football analytics and predictive modeling engine built for live tournament match states.</p>
+            <p>High-frequency football analytics and predictive modeling engine built for live tournament match states[cite: 1].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/wc26-diagram.png" alt="System Flowchart" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/wc26-diagram.png" alt="System Flowchart" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag" style="border-color: rgba(229,168,59,0.3); color: var(--amber);">Architecture Diagram Slot</span>
                 <span>WebSocket Stream Ingestion & Low-Latency State Updates</span>
@@ -735,13 +735,13 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Processes high-frequency match feeds and live odds streams via WebSockets and REST APIs.</li>
-              <li>Coupled bivariate Dixon-Coles goal-scoring models with real-time Bayesian state updating and expected goals (xG).</li>
-              <li>Engineered for deterministic low-latency execution under dynamic market shifts.</li>
+              <li>Processes high-frequency match feeds and live odds streams via WebSockets and REST APIs[cite: 1].</li>
+              <li>Coupled bivariate Dixon-Coles goal-scoring models with real-time Bayesian state updating and expected goals (xG)[cite: 1].</li>
+              <li>Engineered for deterministic low-latency execution under dynamic market shifts[cite: 1].</li>
             </ul>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--amber); margin-top: auto; padding-top: 0.5rem;">
-            🔒 Methodology demonstrated on request during technical discussions.
+          <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--amber); margin-top: auto; padding-top: 0.5rem;">
+            Methodology demonstrated on request during technical discussions[cite: 1].
           </span>
         </div>
       </div>
@@ -754,12 +754,12 @@
         <h2 class="section-title">Core Capabilities & Technical Stack</h2>
       </div>
       <div class="grid-2">
-        <!-- Football Analytics (Added) -->
+        <!-- Football Analytics -->
         <div class="capability-card">
           <div>
             <h3>Football Analytics & Sports Intelligence</h3>
             <div class="tech-stack">Python · Opta Matrix Extraction · YOLOv8 · DuckDB · Pitch Control · xG</div>
-            <p>End-to-end sports data engineering: from reverse-engineering live feeds and video tracking to tactical and kinematic scouting dossiers.</p>
+            <p>End-to-end sports data engineering: from reverse-engineering live feeds and video tracking to tactical and kinematic scouting dossiers[cite: 1, 4, 7].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Event Telemetry</span>
@@ -775,7 +775,7 @@
           <div>
             <h3>Data Engineering & Automation</h3>
             <div class="tech-stack">Python · SQL · DuckDB · PySpark · Playwright · BeautifulSoup · Docker · ETL</div>
-            <p>Production data systems that automate data acquisition, reverse-engineer undocumented endpoints, and eliminate manual processing backlogs.</p>
+            <p>Production data systems that automate data acquisition, reverse-engineer undocumented endpoints, and eliminate manual processing backlogs[cite: 2, 3, 4].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Web Data Extraction</span>
@@ -786,12 +786,12 @@
           </div>
         </div>
 
-        <!-- Analytics & Statistical Systems (Power BI removed, Dixon-Coles & hierarchical added) -->
+        <!-- Analytics & Statistical Systems -->
         <div class="capability-card">
           <div>
             <h3>Analytics, Statistics & Decision Systems</h3>
             <div class="tech-stack">Python · R · SQL · Streamlit · Tableau · Plotly · Dixon-Coles · Bayesian</div>
-            <p>Rigorous applied statistics, hierarchical models, and decision-support applications turning messy operational data into verifiable signals.</p>
+            <p>Rigorous applied statistics, hierarchical models, and decision-support applications turning messy operational data into verifiable signals[cite: 1, 2, 6].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Hierarchical Models</span>
@@ -802,12 +802,12 @@
           </div>
         </div>
 
-        <!-- AI & ML (NLP added) -->
+        <!-- AI & ML -->
         <div class="capability-card">
           <div>
             <h3>AI, Machine Learning & NLP</h3>
             <div class="tech-stack">PyTorch · OpenCV · spaCy · Sentence-BERT · scikit-learn · Hugging Face · YOLOv8</div>
-            <p>Practical machine learning: contrastive representation learning, computer vision object detection, NLP semantic extraction, and LLM evaluation.</p>
+            <p>Practical machine learning: contrastive representation learning, computer vision object detection, NLP semantic extraction, and LLM evaluation[cite: 1, 2, 7].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Natural Language Processing</span>
@@ -823,7 +823,7 @@
           <div>
             <h3>Geospatial & Agricultural Intelligence</h3>
             <div class="tech-stack">Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask · QGIS · GeoPandas · Cloud-Native STAC</div>
-            <p>Multi-sensor satellite raster processing and environmental data pipelines for food security, crop-stress screening, and spatial triage.</p>
+            <p>Multi-sensor satellite raster processing and environmental data pipelines for food security, crop-stress screening, and spatial triage[cite: 1, 2, 3].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Satellite Raster Triage</span>
@@ -853,10 +853,10 @@
               </div>
               <div class="item-role">Python · Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask</div>
             </div>
-            <p>Multi-modal Earth observation pipeline analyzing ~503 hectares in Uasin Gishu County. Distinguishes soil-moisture deficits from canopy stress.</p>
+            <p>Multi-modal Earth observation pipeline analyzing ~503 hectares in Uasin Gishu County. Distinguishes soil-moisture deficits from canopy stress[cite: 1].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/crop-stress-map.png" alt="Satellite Anomaly Maps" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/crop-stress-map.png" alt="Satellite Anomaly Maps" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Raster / Heatmap Snapshot</span>
                 <span>Uasin Gishu 503-Hectare Scouting Polygons</span>
@@ -864,9 +864,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Backed by a 104-test automated pytest validation suite.</li>
-              <li>Employs sensor-native resolutions rather than artificial interpolation.</li>
-              <li>Generates 28 actionable GeoJSON scouting polygons for field verification.</li>
+              <li>Backed by a 104-test automated pytest validation suite[cite: 1].</li>
+              <li>Employs sensor-native resolutions rather than artificial interpolation[cite: 1].</li>
+              <li>Generates 28 actionable GeoJSON scouting polygons for field verification[cite: 1].</li>
             </ul>
           </div>
           <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
@@ -881,10 +881,10 @@
               </div>
               <div class="item-role">PyTorch · ResNet18 · Self-Supervised Vision</div>
             </div>
-            <p>Self-supervised representation learning framework evaluating pavement crack anomalies across 3,000+ infrastructure images.</p>
+            <p>Self-supervised representation learning framework evaluating pavement crack anomalies across 3,000+ infrastructure images[cite: 1, 7].</p>
 
             <div class="snapshot-slot">
-              <!-- <img src="assets/simclr-plot.png" alt="SimCLR Clusters" class="snapshot-img" /> -->
+              <!-- Swap with <img src="assets/simclr-plot.png" alt="SimCLR Clusters" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Computer Vision / t-SNE Plot</span>
                 <span>Contrastive Feature Separation & Anomaly Clusters</span>
@@ -892,9 +892,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Trained using contrastive representation learning (SimCLR).</li>
-              <li>Achieved 99.0% downstream linear evaluation classification accuracy.</li>
-              <li>Designed as a production-grade CV pipeline with PCA/t-SNE validation.</li>
+              <li>Trained using contrastive representation learning (SimCLR)[cite: 1, 7].</li>
+              <li>Achieved 99.0% downstream linear evaluation classification accuracy[cite: 1].</li>
+              <li>Designed as a production-grade CV pipeline with PCA/t-SNE validation[cite: 2, 3].</li>
             </ul>
           </div>
           <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
@@ -912,32 +912,32 @@
       <div class="what-build-grid">
         <div class="what-build-item">
           <h3>Sports & Football Intelligence</h3>
-          <p>Event data pipelines, player kinematic profiling, expected-goals models, and real-time tournament predictive engines.</p>
+          <p>Event data pipelines, player kinematic profiling, expected-goals models, and real-time tournament predictive engines[cite: 1, 4].</p>
         </div>
 
         <div class="what-build-item">
           <h3>Data Engineering & Automation</h3>
-          <p>Resilient web scraping, API reverse-engineering, automated data extraction, and scheduled reporting pipelines.</p>
+          <p>Resilient web scraping, API reverse-engineering, automated data extraction, and scheduled reporting pipelines[cite: 2, 3, 4].</p>
         </div>
 
         <div class="what-build-item">
           <h3>Analytics & Decision Dashboards</h3>
-          <p>Operational decision tools, statistical forecasting models, and interactive KPI applications that replace messy spreadsheets.</p>
+          <p>Operational decision tools, statistical forecasting models, and interactive KPI applications that replace messy spreadsheets[cite: 1, 4].</p>
         </div>
 
         <div class="what-build-item">
           <h3>Applied AI & Computer Vision</h3>
-          <p>Object detection, contrastive anomaly detection, NLP semantic extraction, and LLM evaluation pipelines.</p>
+          <p>Object detection, contrastive anomaly detection, NLP semantic extraction, and LLM evaluation pipelines[cite: 1, 7].</p>
         </div>
 
         <div class="what-build-item">
           <h3>Geospatial & Agri Intelligence</h3>
-          <p>Multi-sensor Earth observation, drought and vegetation triage, remote sensing analytics, and field scouting systems.</p>
+          <p>Multi-sensor Earth observation, drought and vegetation triage, remote sensing analytics, and field scouting systems[cite: 1, 2, 3].</p>
         </div>
 
         <div class="what-build-item">
           <h3>Production Digital Products</h3>
-          <p>Performant commercial websites and lightweight analytical web apps for businesses needing real credibility.</p>
+          <p>Performant commercial websites and lightweight analytical web apps for businesses needing real credibility[cite: 3, 4].</p>
         </div>
       </div>
     </section>
@@ -946,7 +946,7 @@
     <footer>
       <div>
         <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.25rem;">Wayne Chilionje</div>
-        <div style="font-weight: 300;">Nairobi, Kenya · Available for technical engagements & worldwide remote contracts</div>
+        <div style="font-weight: 300;">Nairobi, Kenya · Available for technical engagements & worldwide remote contracts[cite: 1]</div>
       </div>
       <div>
         <a href="mailto:waynemataara@gmail.com" style="color: var(--gold); text-decoration: none;">waynemataara@gmail.com</a>
