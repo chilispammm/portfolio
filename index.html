@@ -6,33 +6,33 @@
   <title>Wayne Chilionje — Data & AI · Digital Systems · Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07080b;
-      --card-bg: rgba(18, 20, 28, 0.72);
-      --card-hover: rgba(24, 27, 38, 0.88);
-      --border: rgba(255, 255, 255, 0.07);
-      --border-accent: rgba(223, 183, 67, 0.28);
-      --text: #f4f5f8;
-      --text-muted: #9ba1b3;
-      --text-dim: #6d7385;
+      --bg: #07080a;
+      --card-bg: rgba(16, 18, 25, 0.65);
+      --card-hover: rgba(22, 25, 36, 0.85);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-accent: rgba(223, 183, 67, 0.25);
+      --text: #f0f2f5;
+      --text-muted: #9aa1b2;
+      --text-dim: #636a7d;
       --gold: #dfb743;
       --gold-bright: #f5d77f;
       --gold-dim: rgba(223, 183, 67, 0.08);
-      --gold-border: rgba(223, 183, 67, 0.22);
+      --gold-border: rgba(223, 183, 67, 0.2);
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
       
-      --font-heading: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: "JetBrains Mono", Monaco, Consolas, monospace;
       
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 22px;
-      --shadow-apple: 0 4px 24px -1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
-      --shadow-hover: 0 12px 36px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(223, 183, 67, 0.32);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-apple: 0 4px 24px -1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      --shadow-hover: 0 14px 40px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(223, 183, 67, 0.3);
       --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -47,15 +47,16 @@
       color: var(--text);
       font-family: var(--font-body);
       line-height: 1.65;
-      padding: 4rem 1.5rem;
+      padding: 4.5rem 1.5rem;
       display: flex;
       justify-content: center;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
       width: 100%;
-      max-width: 960px;
+      max-width: 940px;
     }
 
     /* HEADER */
@@ -86,7 +87,7 @@
 
     .kicker {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--gold);
@@ -95,9 +96,9 @@
 
     h1 {
       font-family: var(--font-heading);
-      font-size: 2.35rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
+      font-size: 2.15rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
       margin-bottom: 0.4rem;
       color: #ffffff;
       line-height: 1.2;
@@ -105,10 +106,11 @@
 
     .subtitle {
       font-family: var(--font-body);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 300;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
     }
 
     .meta-bar {
@@ -116,7 +118,7 @@
       flex-wrap: wrap;
       gap: 1.25rem;
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
     }
 
     .meta-bar a {
@@ -135,10 +137,10 @@
     .avatar-wrapper {
       position: relative;
       flex-shrink: 0;
-      width: 124px;
-      height: 124px;
+      width: 116px;
+      height: 116px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(223, 183, 67, 0.25), rgba(255, 255, 255, 0.04));
+      background: linear-gradient(135deg, rgba(223, 183, 67, 0.22), rgba(255, 255, 255, 0.03));
       padding: 2px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
@@ -147,13 +149,13 @@
       width: 100%;
       height: 100%;
       border-radius: calc(var(--radius-lg) - 2px);
-      background: #11131a;
+      background: #0f1016;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       position: relative;
     }
 
@@ -175,20 +177,20 @@
     }
 
     .avatar-initials {
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: -0.05em;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
     }
 
     .avatar-hint {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--text-dim);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       margin-top: 2px;
     }
 
-    /* EDITORIAL MANIFESTO BOX */
+    /* EDITORIAL LEAD BOX */
     .lead-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -206,14 +208,14 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 4px;
+      width: 3px;
       height: 100%;
       background: linear-gradient(to bottom, var(--gold), transparent);
     }
 
     .lead-label {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--gold);
@@ -222,11 +224,12 @@
 
     .lead-box h2 {
       font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 500;
+      font-size: 1.25rem;
+      font-weight: 400;
       color: #ffffff;
       margin-bottom: 0.75rem;
       line-height: 1.35;
+      letter-spacing: -0.015em;
     }
 
     .lead-box h2 em {
@@ -237,7 +240,7 @@
     }
 
     .lead-box p {
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       color: var(--text-muted);
       font-weight: 300;
       line-height: 1.6;
@@ -251,7 +254,7 @@
     .section-header {
       display: flex;
       align-items: baseline;
-      gap: 0.75rem;
+      gap: 0.65rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.5rem;
       margin-bottom: 1.75rem;
@@ -259,25 +262,25 @@
 
     .section-num {
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       color: var(--gold);
       font-weight: 500;
     }
 
     h2.section-title {
       font-family: var(--font-heading);
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       font-weight: 500;
-      color: #e2e8f0;
+      color: #9aa1b2;
     }
 
     /* 2-COLUMN GRID */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
 
     @media (min-width: 768px) {
@@ -286,12 +289,12 @@
       }
     }
 
-    /* CARDS */
+    /* BUTTERY CARDS */
     .apple-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.65rem;
+      padding: 1.6rem;
       box-shadow: var(--shadow-apple);
       backdrop-filter: blur(14px);
       display: flex;
@@ -301,7 +304,7 @@
     }
 
     .apple-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: var(--border-accent);
       background-color: var(--card-hover);
       box-shadow: var(--shadow-hover);
@@ -310,7 +313,7 @@
     .item-header {
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.3rem;
       margin-bottom: 0.5rem;
     }
 
@@ -323,20 +326,20 @@
 
     .item-title {
       font-family: var(--font-heading);
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-size: 1.08rem;
+      font-weight: 500;
       color: #ffffff;
       line-height: 1.3;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
     }
 
     .item-badge {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.22rem 0.55rem;
-      border-radius: 6px;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
       font-weight: 500;
       white-space: nowrap;
     }
@@ -350,32 +353,33 @@
     .badge-private {
       background: var(--amber-dim);
       color: var(--amber);
-      border: 1px solid rgba(229, 168, 59, 0.3);
+      border: 1px solid rgba(229, 168, 59, 0.25);
     }
 
     .item-role {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--gold);
       margin-bottom: 0.75rem;
       line-height: 1.4;
+      font-weight: 400;
     }
 
     .apple-card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
       font-weight: 300;
       line-height: 1.55;
     }
 
-    /* SNAPSHOT CONTAINER */
+    /* REFINED SNAPSHOT CONTAINER */
     .snapshot-slot {
-      margin: 0.9rem 0 1.25rem 0;
+      margin: 0.85rem 0 1.15rem 0;
       border: 1px dashed var(--border);
       border-radius: var(--radius-sm);
-      background: rgba(10, 11, 16, 0.85);
-      min-height: 165px;
+      background: rgba(9, 10, 14, 0.85);
+      min-height: 155px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -387,13 +391,13 @@
 
     .apple-card:hover .snapshot-slot {
       border-color: var(--gold-border);
-      background: rgba(14, 15, 22, 0.95);
+      background: rgba(13, 14, 20, 0.95);
     }
 
     .snapshot-img {
       width: 100%;
       height: 100%;
-      max-height: 240px;
+      max-height: 230px;
       object-fit: cover;
       display: block;
       border-radius: calc(var(--radius-sm) - 1px);
@@ -404,20 +408,20 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       color: var(--text-dim);
       text-align: center;
       padding: 1.5rem;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
     }
 
     .snapshot-tag {
-      font-size: 0.66rem;
+      font-size: 0.64rem;
       color: var(--gold);
       background: var(--gold-dim);
       border: 1px solid var(--gold-border);
-      padding: 0.15rem 0.45rem;
+      padding: 0.12rem 0.42rem;
       border-radius: 4px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -425,15 +429,15 @@
 
     .bullet-list {
       list-style: none;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.15rem;
       font-weight: 300;
     }
 
     .bullet-list li {
-      margin-bottom: 0.45rem;
-      padding-left: 1.15rem;
+      margin-bottom: 0.4rem;
+      padding-left: 1.1rem;
       position: relative;
       line-height: 1.45;
     }
@@ -443,7 +447,6 @@
       position: absolute;
       left: 0;
       color: var(--gold);
-      font-weight: bold;
     }
 
     .item-link {
@@ -451,12 +454,12 @@
       align-items: center;
       gap: 0.35rem;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--gold);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       margin-top: auto;
-      padding-top: 0.5rem;
+      padding-top: 0.4rem;
       transition: border-color 0.2s var(--ease-apple);
     }
 
@@ -464,7 +467,7 @@
       border-bottom-color: var(--gold);
     }
 
-    /* CAPABILITIES */
+    /* CAPABILITY CARDS */
     .capability-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -485,24 +488,26 @@
 
     .capability-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-size: 1.02rem;
+      font-weight: 500;
       margin-bottom: 0.3rem;
       color: #ffffff;
+      letter-spacing: -0.015em;
     }
 
     .capability-card .tech-stack {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--gold);
-      margin-bottom: 0.8rem;
-      line-height: 1.45;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      font-weight: 400;
     }
 
     .capability-card p {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 0.95rem;
       font-weight: 300;
       line-height: 1.5;
     }
@@ -510,25 +515,25 @@
     .tag-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.38rem;
+      gap: 0.35rem;
       margin-top: auto;
     }
 
     .tag {
       font-family: var(--font-mono);
-      font-size: 0.67rem;
-      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.66rem;
+      background: rgba(255, 255, 255, 0.035);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 0.18rem 0.48rem;
+      padding: 0.16rem 0.44rem;
       border-radius: 4px;
     }
 
-    /* WHAT I BUILD GRID */
+    /* SERVICE PILLARS */
     .what-build-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 0.95rem;
     }
 
     @media (min-width: 680px) {
@@ -538,24 +543,25 @@
     }
 
     .what-build-item {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.018);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 1.25rem 1.4rem;
+      padding: 1.2rem 1.35rem;
       transition: all 0.25s var(--ease-apple);
     }
 
     .what-build-item:hover {
       border-color: var(--gold-border);
-      background: rgba(223, 183, 67, 0.03);
+      background: rgba(223, 183, 67, 0.025);
     }
 
     .what-build-item h3 {
       font-family: var(--font-heading);
-      font-size: 0.94rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 500;
       color: #ffffff;
       margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
     }
 
     .what-build-item p {
@@ -575,7 +581,7 @@
       align-items: center;
       gap: 1.25rem;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
   </style>
@@ -602,7 +608,6 @@
         <!-- Headshot Provision -->
         <div class="avatar-wrapper">
           <div class="avatar-inner">
-            <!-- Swap contents below with <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje" class="avatar-img" /> -->
             <div class="avatar-placeholder">
               <span class="avatar-initials">WC</span>
               <span class="avatar-hint">Photo Slot</span>
@@ -637,10 +642,9 @@
               </div>
               <div class="item-role">Commercial Web Platform · Production Deployment</div>
             </div>
-            <p>Production corporate platform for an established Kenyan branding, advertising, and events firm[cite: 3].</p>
+            <p>Production corporate platform for an established Kenyan branding, advertising, and events firm[cite: 4].</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/crystalbrands-preview.png" alt="Crystal Brands" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Interface Snapshot</span>
                 <span>crystalbrands.co.ke — Production Web App</span>
@@ -648,9 +652,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Engineered responsive commercial architecture focused on brand positioning and automated business inquiry routing[cite: 3].</li>
-              <li>Structured digital catalog around actual production offerings and corporate procurement workflows[cite: 3].</li>
-              <li>Actively maintained production system with continuous uptime stability[cite: 3].</li>
+              <li>Engineered responsive commercial architecture focused on brand positioning and automated business inquiry routing[cite: 4].</li>
+              <li>Structured digital catalog around actual production offerings and corporate procurement workflows[cite: 4].</li>
+              <li>Actively maintained production system with continuous uptime stability[cite: 4].</li>
             </ul>
           </div>
           <a class="item-link" href="https://crystalbrands.co.ke/" target="_blank" rel="noopener">crystalbrands.co.ke ↗</a>
@@ -666,10 +670,9 @@
               </div>
               <div class="item-role">Sports Analytics Platform · Automated Telemetry Pipelines</div>
             </div>
-            <p>Independent football intelligence platform combining automated web extraction, spatial tracking, and physical performance modeling[cite: 3, 4].</p>
+            <p>Independent football intelligence platform combining automated web extraction, spatial tracking, and physical performance modeling[cite: 1, 4].</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/chilianalysis-preview.png" alt="ChiliAnalysis" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Platform Snapshot</span>
                 <span>chilianalysis.co.ke — Match Event Stream & Spatial Maps</span>
@@ -677,8 +680,8 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Engineered automated extraction workflows collecting frame-by-frame match events and Opta matrices[cite: 4, 5].</li>
-              <li>Developed spatial analytics and player evaluation dossiers benchmarking Kenyan NSL players against CAF and European standards[cite: 1, 4].</li>
+              <li>Engineered automated extraction workflows collecting frame-by-frame match events and Opta matrices[cite: 5, 9].</li>
+              <li>Developed spatial analytics and player evaluation dossiers benchmarking Kenyan NSL players against CAF and European standards[cite: 1, 2].</li>
               <li>Authored 10+ published technical dossiers generating 10,000+ organic technical reads[cite: 1].</li>
             </ul>
           </div>
@@ -695,10 +698,9 @@
               </div>
               <div class="item-role">Decision Intelligence · Relational Schemas · Operations MVP</div>
             </div>
-            <p>Operational decision-support platform designed to consolidate complex farm records into an actionable command center[cite: 1, 2].</p>
+            <p>Operational decision-support platform designed to consolidate complex farm records into an actionable command center[cite: 1, 4].</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/wanza-preview.png" alt="Wanza FMS" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Operational Demo</span>
                 <span>wanza-fms.streamlit.app — Herd Census & Input Ledger</span>
@@ -706,8 +708,8 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Designed relational data schemas reconciling livestock records, lactation outputs, crop inputs, and farm expenses[cite: 1, 2].</li>
-              <li>Implemented deterministic data validation separating documented source truth from missing inputs and assumptions[cite: 1, 2].</li>
+              <li>Designed relational data schemas reconciling livestock records, lactation outputs, crop inputs, and farm expenses[cite: 1].</li>
+              <li>Implemented deterministic data validation separating documented source truth from missing inputs and assumptions[cite: 1].</li>
               <li>Built automated verification test suites covering complex business rules and edge-case exceptions[cite: 1].</li>
             </ul>
           </div>
@@ -724,24 +726,23 @@
               </div>
               <div class="item-role">Live Streams · Dixon-Coles & Bayesian Models · Private Engine</div>
             </div>
-            <p>High-frequency football analytics and predictive modeling engine built for live tournament match states[cite: 1].</p>
+            <p>High-frequency football analytics and predictive modeling engine built for live tournament match states.</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/wc26-diagram.png" alt="System Flowchart" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
-                <span class="snapshot-tag" style="border-color: rgba(229,168,59,0.3); color: var(--amber);">Architecture Diagram Slot</span>
+                <span class="snapshot-tag" style="border-color: rgba(229,168,59,0.25); color: var(--amber);">Architecture Diagram Slot</span>
                 <span>WebSocket Stream Ingestion & Low-Latency State Updates</span>
               </div>
             </div>
 
             <ul class="bullet-list">
-              <li>Processes high-frequency match feeds and live odds streams via WebSockets and REST APIs[cite: 1].</li>
-              <li>Coupled bivariate Dixon-Coles goal-scoring models with real-time Bayesian state updating and expected goals (xG)[cite: 1].</li>
-              <li>Engineered for deterministic low-latency execution under dynamic market shifts[cite: 1].</li>
+              <li>Processes high-frequency match feeds and live odds streams via WebSockets and REST APIs.</li>
+              <li>Coupled bivariate Dixon-Coles goal-scoring models with real-time Bayesian state updating and expected goals (xG).</li>
+              <li>Engineered for deterministic low-latency execution under dynamic market shifts.</li>
             </ul>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--amber); margin-top: auto; padding-top: 0.5rem;">
-            Methodology demonstrated on request during technical discussions[cite: 1].
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--amber); margin-top: auto; padding-top: 0.5rem;">
+            Methodology demonstrated on request during technical discussions.
           </span>
         </div>
       </div>
@@ -759,7 +760,7 @@
           <div>
             <h3>Football Analytics & Sports Intelligence</h3>
             <div class="tech-stack">Python · Opta Matrix Extraction · YOLOv8 · DuckDB · Pitch Control · xG</div>
-            <p>End-to-end sports data engineering: from reverse-engineering live feeds and video tracking to tactical and kinematic scouting dossiers[cite: 1, 4, 7].</p>
+            <p>End-to-end sports data engineering: from reverse-engineering live feeds and video tracking to tactical and kinematic scouting dossiers[cite: 1, 2, 9].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Event Telemetry</span>
@@ -775,7 +776,7 @@
           <div>
             <h3>Data Engineering & Automation</h3>
             <div class="tech-stack">Python · SQL · DuckDB · PySpark · Playwright · BeautifulSoup · Docker · ETL</div>
-            <p>Production data systems that automate data acquisition, reverse-engineer undocumented endpoints, and eliminate manual processing backlogs[cite: 2, 3, 4].</p>
+            <p>Production data systems that automate data acquisition, reverse-engineer undocumented endpoints, and eliminate manual processing backlogs[cite: 1, 9, 12].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Web Data Extraction</span>
@@ -791,7 +792,7 @@
           <div>
             <h3>Analytics, Statistics & Decision Systems</h3>
             <div class="tech-stack">Python · R · SQL · Streamlit · Tableau · Plotly · Dixon-Coles · Bayesian</div>
-            <p>Rigorous applied statistics, hierarchical models, and decision-support applications turning messy operational data into verifiable signals[cite: 1, 2, 6].</p>
+            <p>Rigorous applied statistics, hierarchical models, and decision-support applications turning messy operational data into verifiable signals[cite: 1, 3].</p>
           </div>
           <div class="tag-grid">
             <span class="tag">Hierarchical Models</span>
@@ -853,10 +854,9 @@
               </div>
               <div class="item-role">Python · Sentinel-2 · CHIRPS · NASA SMAP · xarray · Dask</div>
             </div>
-            <p>Multi-modal Earth observation pipeline analyzing ~503 hectares in Uasin Gishu County. Distinguishes soil-moisture deficits from canopy stress[cite: 1].</p>
+            <p>Multi-modal Earth observation pipeline analyzing ~503 hectares in Uasin Gishu County. Distinguishes soil-moisture deficits from canopy stress[cite: 1, 2].</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/crop-stress-map.png" alt="Satellite Anomaly Maps" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Raster / Heatmap Snapshot</span>
                 <span>Uasin Gishu 503-Hectare Scouting Polygons</span>
@@ -864,9 +864,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Backed by a 104-test automated pytest validation suite[cite: 1].</li>
-              <li>Employs sensor-native resolutions rather than artificial interpolation[cite: 1].</li>
-              <li>Generates 28 actionable GeoJSON scouting polygons for field verification[cite: 1].</li>
+              <li>Backed by a 104-test automated pytest validation suite[cite: 1, 2].</li>
+              <li>Employs sensor-native resolutions rather than artificial interpolation[cite: 1, 7].</li>
+              <li>Generates 28 actionable GeoJSON scouting polygons for field verification[cite: 1, 2].</li>
             </ul>
           </div>
           <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
@@ -881,10 +881,9 @@
               </div>
               <div class="item-role">PyTorch · ResNet18 · Self-Supervised Vision</div>
             </div>
-            <p>Self-supervised representation learning framework evaluating pavement crack anomalies across 3,000+ infrastructure images[cite: 1, 7].</p>
+            <p>Self-supervised representation learning framework evaluating pavement crack anomalies across 3,000+ infrastructure images[cite: 1, 2].</p>
 
             <div class="snapshot-slot">
-              <!-- Swap with <img src="assets/simclr-plot.png" alt="SimCLR Clusters" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Computer Vision / t-SNE Plot</span>
                 <span>Contrastive Feature Separation & Anomaly Clusters</span>
@@ -892,9 +891,9 @@
             </div>
 
             <ul class="bullet-list">
-              <li>Trained using contrastive representation learning (SimCLR)[cite: 1, 7].</li>
-              <li>Achieved 99.0% downstream linear evaluation classification accuracy[cite: 1].</li>
-              <li>Designed as a production-grade CV pipeline with PCA/t-SNE validation[cite: 2, 3].</li>
+              <li>Trained using contrastive representation learning (SimCLR)[cite: 1, 2].</li>
+              <li>Achieved 99.0% downstream linear evaluation classification accuracy[cite: 1, 3].</li>
+              <li>Designed as a production-grade CV pipeline with PCA/t-SNE validation[cite: 1, 2].</li>
             </ul>
           </div>
           <a class="item-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
@@ -917,7 +916,7 @@
 
         <div class="what-build-item">
           <h3>Data Engineering & Automation</h3>
-          <p>Resilient web scraping, API reverse-engineering, automated data extraction, and scheduled reporting pipelines[cite: 2, 3, 4].</p>
+          <p>Resilient web scraping, API reverse-engineering, automated data extraction, and scheduled reporting pipelines[cite: 1, 5, 9].</p>
         </div>
 
         <div class="what-build-item">
@@ -927,7 +926,7 @@
 
         <div class="what-build-item">
           <h3>Applied AI & Computer Vision</h3>
-          <p>Object detection, contrastive anomaly detection, NLP semantic extraction, and LLM evaluation pipelines[cite: 1, 7].</p>
+          <p>Object detection, contrastive anomaly detection, NLP semantic extraction, and LLM evaluation pipelines[cite: 1, 2, 7].</p>
         </div>
 
         <div class="what-build-item">
@@ -937,7 +936,7 @@
 
         <div class="what-build-item">
           <h3>Production Digital Products</h3>
-          <p>Performant commercial websites and lightweight analytical web apps for businesses needing real credibility[cite: 3, 4].</p>
+          <p>Performant commercial websites and lightweight analytical web apps for businesses needing real credibility[cite: 4].</p>
         </div>
       </div>
     </section>
@@ -945,7 +944,7 @@
     <!-- 05 / FOOTER -->
     <footer>
       <div>
-        <div style="font-weight: 600; color: #ffffff; margin-bottom: 0.25rem;">Wayne Chilionje</div>
+        <div style="font-weight: 500; color: #ffffff; margin-bottom: 0.25rem;">Wayne Chilionje</div>
         <div style="font-weight: 300;">Nairobi, Kenya · Available for technical engagements & worldwide remote contracts[cite: 1]</div>
       </div>
       <div>
