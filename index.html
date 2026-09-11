@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wayne Chilionje — Data & AI · Digital Systems · Analytics</title>
+  <title>Wayne Chilionje — Data Scientist · AI · Analytics · Digital Systems</title>
+  <meta name="description" content="Portfolio of Wayne Chilionje — Data Scientist and Analytics Engineer specializing in data engineering, applied AI/ML, geospatial and agricultural intelligence, statistical modelling, and digital systems." />
+  <meta name="keywords" content="Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Engineer, Geospatial Data Scientist, Remote Sensing, Agricultural Data Science, GIS, Python, SQL, R, Machine Learning, Deep Learning, Computer Vision, NLP, Data Engineering, ETL, Data Analytics, Statistical Modelling, Bayesian Modelling, Forecasting, Data Visualisation, Power BI, Tableau, Streamlit, Pandas, NumPy, scikit-learn, PyTorch, TensorFlow, OpenCV, spaCy, Sentence-BERT, Hugging Face, XGBoost, LightGBM, YOLO, SQLAlchemy, PySpark, Docker, Git, GitHub, Web Scraping, API Integration, Data Pipelines, Automation, Geospatial Analytics, Sentinel-2, CHIRPS, NASA SMAP, GeoPandas, Rasterio, xarray, Dask, QGIS, STAC, Agricultural Intelligence, Sports Analytics, Football Analytics, Quantitative Modelling" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #07080a;
@@ -63,7 +67,7 @@
     header {
       border-bottom: 1px solid var(--border);
       padding-bottom: 2.5rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
     }
 
     .header-layout {
@@ -132,7 +136,7 @@
       border-bottom-color: var(--gold-bright);
     }
 
-    /* HEADSHOT PROVISION */
+    /* HEADSHOT */
     .avatar-wrapper {
       position: relative;
       flex-shrink: 0;
@@ -188,7 +192,7 @@
       margin-top: 2px;
     }
 
-    /* RESTRAINED INTRO */
+    /* INTRO BLOCK */
     .intro-block {
       margin-bottom: 3.5rem;
       padding: 0 0.25rem;
@@ -208,7 +212,7 @@
       margin-bottom: 0;
     }
 
-    /* SECTIONS */
+    /* SECTION HEADERS */
     section {
       margin-bottom: 4.5rem;
     }
@@ -238,7 +242,7 @@
       color: #9aa1b2;
     }
 
-    /* GRID ARCHITECTURE */
+    /* FEATURED GRID */
     .featured-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -363,7 +367,7 @@
       font-weight: 500;
     }
 
-    /* VISUAL SNAPSHOT CONTAINERS */
+    /* SNAPSHOT CONTAINERS */
     .snapshot-slot {
       margin: 0.5rem 0 1.2rem 0;
       border: 1px dashed var(--border);
@@ -451,7 +455,7 @@
       color: var(--amber);
     }
 
-    /* SECTION 02: TECHNICAL SUPPORTING GRID */
+    /* TECHNICAL SUPPORTING GRID */
     .tech-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -537,7 +541,7 @@
       text-decoration: underline;
     }
 
-    /* SECTION 03: COMPACT TECHNICAL INVENTORY */
+    /* COMPACT TECHNICAL INVENTORY */
     .skills-inventory {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -570,7 +574,7 @@
         gap: 1.5rem;
       }
       .inventory-label {
-        width: 170px;
+        width: 190px;
         flex-shrink: 0;
       }
       .inventory-items {
@@ -612,7 +616,7 @@
 <body>
   <div class="container">
     
-    <!-- IDENTITY & HEADER -->
+    <!-- HEADER -->
     <header>
       <div class="header-layout">
         <div class="header-text">
@@ -631,7 +635,7 @@
         <!-- Headshot Provision -->
         <div class="avatar-wrapper">
           <div class="avatar-inner">
-            <!-- Replace contents with <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje" class="avatar-img" /> -->
+            <!-- To connect photo: <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje - Headshot" class="avatar-img" /> -->
             <div class="avatar-placeholder">
               <span class="avatar-initials">WC</span>
               <span class="avatar-hint">Photo</span>
@@ -643,8 +647,8 @@
 
     <!-- INTRO -->
     <div class="intro-block">
-      <p>I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning, and production web applications.</p>
-      <p class="secondary">My work spans agriculture, football, operations, and quantitative modelling, with a focus on turning messy data into something people can actually use.</p>
+      <p>I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications.</p>
+      <p class="secondary">My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use.</p>
     </div>
 
     <!-- SECTION 01: SELECTED WORK -->
@@ -668,7 +672,7 @@
             </div>
 
             <p class="card-description">
-              An end-to-end agricultural early-warning and anomaly screening pipeline. Ingests optical satellite imagery, precipitation, and soil moisture data across 15 bi-weekly analysis bins to evaluate vegetation conditions and isolate root-zone moisture deficits without spatial interpolation artifacts. Built with deterministic screening logic that outputs vector field boundaries for scouting teams.
+              An end-to-end agricultural early-warning and anomaly screening system. Ingests optical satellite imagery, precipitation, and soil moisture across 15 × 14-day analysis bins using sensor-native resolution handling. Employs deterministic screening logic that outputs vector field boundaries for scouting teams without introducing spatial interpolation artifacts.
             </p>
 
             <div class="evidence-row">
@@ -676,13 +680,13 @@
               <span class="evidence-pill"><strong>83,850</strong> pixel/bin evaluations</span>
               <span class="evidence-pill"><strong>28</strong> scouting clusters</span>
               <span class="evidence-pill"><strong>104</strong> automated tests</span>
-              <span class="evidence-pill">Python / xarray / Dask / STAC</span>
+              <span class="evidence-pill">Python / xarray / Dask / GeoPandas / STAC</span>
             </div>
 
             <div class="snapshot-slot">
-              <!-- Replace with <img src="assets/crop-stress-map.png" alt="Crop Stress Screening Map" class="snapshot-img" /> -->
+              <!-- Connect asset: <img src="assets/crop-stress-map.png" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
-                <span class="snapshot-tag">Raster / Anomaly Heatmap</span>
+                <span class="snapshot-tag">Raster / Screening Map</span>
                 <span>Uasin Gishu 503-Hectare Scouting Polygons & Multi-Temporal Persistence Maps</span>
               </div>
             </div>
@@ -705,22 +709,22 @@
             </div>
 
             <p class="card-description">
-              A source-grounded farm management and operational intelligence system built around real operational records. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while strictly isolating verified source ground-truth from unsupported assumptions and missing entries.
+              A source-grounded farm management and decision-support system built around real operational records. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while explicitly preserving missing or unknown source data rather than inventing values.
             </p>
 
             <div class="evidence-row">
               <span class="evidence-pill"><strong>42</strong> registered animals</span>
               <span class="evidence-pill"><strong>23</strong> crop plots</span>
               <span class="evidence-pill"><strong>32,761.27 L</strong> milk output</span>
-              <span class="evidence-pill"><strong>100%</strong> census reconciliation</span>
+              <span class="evidence-pill"><strong>100%</strong> census reconciliation (8 stages)</span>
               <span class="evidence-pill"><strong>84+</strong> validation tests</span>
             </div>
 
             <div class="snapshot-slot">
-              <!-- Replace with <img src="assets/wanza-fms-demo.png" alt="Wanza FMS Interface" class="snapshot-img" /> -->
+              <!-- Connect asset: <img src="assets/wanza-fms-demo.png" alt="Wanza farm management dashboard" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Operational Interface</span>
-                <span>wanza-fms — Production Schema & Herd Reconciliation</span>
+                <span>wanza-fms — Production Relational Schemas & Herd Reconciliation</span>
               </div>
             </div>
           </div>
@@ -738,22 +742,23 @@
                 <div class="card-title">ChiliAnalysis Football Intelligence</div>
                 <span class="badge badge-live">Live Platform</span>
               </div>
-              <div class="card-subtitle">Football Analytics · Data Engineering · Player Intelligence</div>
+              <div class="card-subtitle">Football Analytics · Player Intelligence · Data Engineering</div>
             </div>
 
             <p class="card-description">
-              An independent sports intelligence platform combining automated data extraction, performance analytics, and technical reporting. Collects event-level football datasets and models player metrics, positional benchmarks, and spatial profiles to evaluate talent across Kenyan and regional football.
+              An independent football intelligence platform covering player performance across African and European football, combining automated data acquisition, statistical analysis, player benchmarking and technical reporting.
             </p>
 
             <div class="evidence-row">
+              <span class="evidence-pill"><strong>30,000+</strong> organic reads</span>
               <span class="evidence-pill"><strong>10+</strong> technical dossiers</span>
-              <span class="evidence-pill"><strong>10,000+</strong> organic reads</span>
-              <span class="evidence-pill">Automated extraction</span>
-              <span class="evidence-pill">Spatial player benchmarking</span>
+              <span class="evidence-pill">Kenyan player benchmarking</span>
+              <span class="evidence-pill">Premier League analysis</span>
+              <span class="evidence-pill">AFCON 2025 analysis</span>
             </div>
 
             <div class="snapshot-slot">
-              <!-- Replace with <img src="assets/chilianalysis-platform.png" alt="ChiliAnalysis Dashboard" class="snapshot-img" /> -->
+              <!-- Connect asset: <img src="assets/chilianalysis-platform.png" alt="ChiliAnalysis football player intelligence platform" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Platform Interface</span>
                 <span>chilianalysis.co.ke — Event Stream & Scouting Dossiers</span>
@@ -778,7 +783,7 @@
             </div>
 
             <p class="card-description">
-              A quantitative modelling system engineered for international tournament outcome forecasting and market analysis. Combines hierarchical Bayesian Poisson models, Markov Chain Monte Carlo (MCMC) estimation, tree-based ensemble classifiers, and Monte Carlo tournament simulations with Kelly-based capital allocation logic.
+              A quantitative modelling system engineered for international tournament outcome forecasting and market intelligence. Integrates hierarchical Bayesian Poisson models via MCMC, gradient-boosted tree ensembles (XGBoost, LightGBM, Random Forest), feature engineering, Monte Carlo tournament simulations, and de-vigging with Kelly-based risk sizing.
             </p>
 
             <div class="evidence-row">
@@ -790,10 +795,10 @@
             </div>
 
             <div class="snapshot-slot">
-              <!-- Replace with <img src="assets/wc26-engine.png" alt="World Cup 2026 Model Visual" class="snapshot-img" /> -->
+              <!-- Connect asset: <img src="assets/wc26-engine.png" alt="World Cup quantitative forecasting model" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Simulation & Bayesian Model</span>
-                <span>Hierarchical Poisson State & Tournament Outcome Distribution</span>
+                <span>Hierarchical Poisson State & Tournament Simulation Distribution</span>
               </div>
             </div>
           </div>
@@ -815,18 +820,18 @@
             </div>
 
             <p class="card-description">
-              Production commercial website built and deployed for an established Kenyan branding, advertising, and corporate fabrication company. Structured around the firm's commercial service offerings, project portfolio, and client business inquiry flows.
+              Production commercial website built for a Kenyan branding, advertising and events company. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows.
             </p>
 
             <div class="evidence-row">
-              <span class="evidence-pill">Live client deployment</span>
-              <span class="evidence-pill">Commercial information architecture</span>
-              <span class="evidence-pill">Responsive web build</span>
-              <span class="evidence-pill">Inquiry workflow capture</span>
+              <span class="evidence-pill">Real client deployment</span>
+              <span class="evidence-pill">Responsive commercial site</span>
+              <span class="evidence-pill">Commercial catalog architecture</span>
+              <span class="evidence-pill">Enquiry & contact workflow</span>
             </div>
 
             <div class="snapshot-slot">
-              <!-- Replace with <img src="assets/crystalbrands-live.png" alt="Crystal Brands Live Website" class="snapshot-img" /> -->
+              <!-- Connect asset: <img src="assets/crystalbrands-live.png" alt="Crystal Brands commercial website" class="snapshot-img" /> -->
               <div class="snapshot-placeholder">
                 <span class="snapshot-tag">Production Website</span>
                 <span>crystalbrands.co.ke — Live Corporate Platform</span>
@@ -856,10 +861,10 @@
           <div>
             <h3>YOLOv8 Eliteserien Football Detection</h3>
             <div class="stack-tag">Computer Vision · YOLOv8 · Video</div>
-            <p>End-to-end computer vision workflow for multi-class detection in high-motion sports broadcast footage. Covers frame extraction, dataset annotation, model training, and inference on players, referees, and the ball.</p>
+            <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball.</p>
           </div>
-          <div class="snapshot-slot" style="min-height: 100px; margin: 0 0 0.75rem 0;">
-            <!-- Replace with <img src="assets/yolo-detection.png" alt="Detection Frame" class="snapshot-img" /> -->
+          <div class="snapshot-slot" style="min-height: 105px; margin: 0 0 0.75rem 0;">
+            <!-- Connect asset: <img src="assets/yolo-detection.png" alt="YOLOv8 football player detection" class="snapshot-img" /> -->
             <div class="snapshot-placeholder" style="padding: 0.75rem;">
               <span class="snapshot-tag">Detection Frame</span>
             </div>
@@ -872,7 +877,7 @@
           <div>
             <h3>MUFC Goals & Passing — Statistical Modelling</h3>
             <div class="stack-tag">R · GLMs · Negative Binomial · Mixed Effects</div>
-            <p>Applied statistical modelling investigating attacking sequences across 38 matches. Evaluated relationships between assist profiles, expected goals (xG), and final match goal outcomes using mixed-effects regression.</p>
+            <p>Applied statistical modelling investigating attacking sequences across 38 matches. Evaluated relationships between assist profiles, expected goals (xG), and final goal outcomes using mixed-effects regression.</p>
             <div class="tech-evidence-pill">Assists p &lt; .001 · xG p = .002</div>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Technical Note ↗</a>
@@ -893,7 +898,7 @@
         <div class="tech-card">
           <div>
             <h3>Job Scraping & NLP Classification</h3>
-            <div class="stack-tag">Python · Web Extraction · NLP · Automation</div>
+            <div class="stack-tag">Python · Web Scraping · NLP · Automation</div>
             <p>Automated collection pipeline navigating dynamic postings. Implements rate limiting, user-agent handling, HTML normalization, entity extraction, and automated skill taxonomy tagging into structured CSV exports.</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Codebase ↗</a>
@@ -904,7 +909,7 @@
           <div>
             <h3>Premier League Forward Performance</h3>
             <div class="stack-tag">R · Multinomial Models · GLM</div>
-            <p>Statistical evaluation of forward finishing performance, shot distribution metrics, and goal expectancy profiles using generalized linear and multinomial models across multi-season league data.</p>
+            <p>Statistical evaluation of forward finishing performance, shot distribution metrics, and goal expectancy profiles using generalized linear and multinomial models across multi-season league datasets.</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Case Study ↗</a>
         </div>
@@ -914,7 +919,7 @@
           <div>
             <h3>African Wildlife Image Classification</h3>
             <div class="stack-tag">TensorFlow · Keras · OpenCV · CNN</div>
-            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data. Incorporates image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis.</p>
+            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data. Covers image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis.</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
@@ -922,11 +927,11 @@
       </div>
     </section>
 
-    <!-- SECTION 03: COMPACT TECHNICAL INVENTORY -->
+    <!-- SECTION 03: SKILLS & TECHNOLOGIES -->
     <section>
       <div class="section-header">
         <span class="section-num">03</span>
-        <h2 class="section-title">Technical Inventory</h2>
+        <h2 class="section-title">Skills & Technologies</h2>
       </div>
 
       <div class="skills-inventory">
@@ -937,27 +942,32 @@
 
         <div class="inventory-row">
           <div class="inventory-label">Data & Engineering</div>
-          <div class="inventory-items">Pandas · NumPy · DuckDB · PySpark · SQLAlchemy · ETL Pipelines · Web Scraping (Playwright, Selenium, BeautifulSoup) · APIs · Schema Validation · Pytest · Docker</div>
+          <div class="inventory-items">Pandas · NumPy · SQLAlchemy · SQLite · DuckDB · PySpark · Spark SQL · ETL / ELT Pipelines · Data Pipelines · Automation · Web Scraping (Playwright, Selenium, BeautifulSoup) · APIs & API Integration · Dynamic Web Data / XHR Analysis · Schema Validation · Data Quality & Reconciliation · Docker</div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">AI & Machine Learning</div>
-          <div class="inventory-items">PyTorch · TensorFlow / Keras · scikit-learn · XGBoost · LightGBM · YOLOv8 · OpenCV · NLP (spaCy, Sentence-BERT) · Computer Vision</div>
+          <div class="inventory-items">PyTorch · TensorFlow / Keras · scikit-learn · XGBoost · LightGBM · YOLO (YOLOv8) · OpenCV · Natural Language Processing (NLP) · spaCy · Sentence-BERT · Hugging Face · Deep Learning · Computer Vision · Model Evaluation · Feature Engineering</div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Analytics & Statistics</div>
-          <div class="inventory-items">Statistical Modelling · Bayesian Methods · Mixed-Effects Models · Forecasting · Monte Carlo Simulation · Power BI · Tableau · Streamlit · Plotly</div>
+          <div class="inventory-items">Statistical Modelling · Generalized Linear Models (GLMs) · Negative Binomial Models · Mixed-Effects Models · Multinomial Models · Bayesian Modelling · Hierarchical Bayesian Models · MCMC · Forecasting · Monte Carlo Simulation · Quantitative Modelling · Data Visualisation · Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">Geospatial & Remote Sensing</div>
-          <div class="inventory-items">Sentinel-2 · Landsat · CHIRPS · NASA SMAP · xarray · Dask · GeoPandas · Rasterio · STAC API · QGIS</div>
+          <div class="inventory-label">Geospatial & Agriculture</div>
+          <div class="inventory-items">Geospatial Analytics · Remote Sensing · Agricultural Intelligence · GIS · Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI · xarray · Dask · GeoPandas · Rasterio · STAC · QGIS · UN FAO RuralInvest & MAFAP Methodologies</div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">Development & Web</div>
-          <div class="inventory-items">Git · GitHub · HTML5 · CSS3 · Modern JavaScript · Responsive Web Architecture</div>
+          <div class="inventory-label">Sports Intelligence</div>
+          <div class="inventory-items">Sports Analytics · Football Analytics · Player Intelligence · Event Data Ingestion · Kinematic Profiling · Positional Benchmarking · Match Simulation</div>
+        </div>
+
+        <div class="inventory-row">
+          <div class="inventory-label">Development & Workflow</div>
+          <div class="inventory-items">Git · GitHub · Pytest · Linux / Bash · HTML5 · CSS3 · Modern JavaScript · Responsive Web Development · Technical Documentation · Reproducible Workflows</div>
         </div>
       </div>
     </section>
