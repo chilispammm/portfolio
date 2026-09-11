@@ -392,23 +392,23 @@
     .card-description {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
       font-weight: 300;
       line-height: 1.55;
-      min-height: 4rem;
+      min-height: 4.2rem;
     }
 
     .featured-lead .card-description {
       min-height: auto;
     }
 
-    /* COMPACT EVIDENCE ROW WITH MIN-HEIGHT ALIGNMENT */
+    /* COMPACT EVIDENCE ROW WITH UNIFIED MIN-HEIGHT */
     .evidence-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
       margin-bottom: 1.1rem;
-      min-height: 52px;
+      min-height: 50px;
       align-content: flex-start;
     }
 
@@ -432,26 +432,25 @@
       font-weight: 500;
     }
 
-    /* UNIFIED 16:9.5 ASPECT RATIO SNAPSHOT CONTAINER */
+    /* STANDARDIZED SNAPSHOT CONTAINERS (EXACT HEIGHT LOCK) */
     .snapshot-slot {
-      margin: 0.25rem 0 1.2rem 0;
+      margin: 0.25rem 0 1.15rem 0;
       border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: var(--radius-sm);
-      background: #0b0c12;
+      background: #090a0f;
+      height: 205px;
       width: 100%;
-      aspect-ratio: 16 / 9.5;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
       transition: all 0.25s var(--ease-apple);
     }
 
     .featured-lead .snapshot-slot {
-      aspect-ratio: 21 / 9;
-      max-height: 300px;
+      height: 270px;
     }
 
     .project-card:hover .snapshot-slot {
@@ -461,24 +460,46 @@
     .snapshot-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: top center;
       display: block;
     }
 
-    /* SPECIAL FRAMING FOR WHITE / LIGHT BACKGROUND SCREENSHOTS */
+    /* Crop Stress satellite image */
+    .snapshot-img.triage-img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ChiliAnalysis image - anchored left so text is never cropped */
+    .snapshot-img.chili-img {
+      object-fit: cover;
+      object-position: left center;
+      background: #000000;
+    }
+
+    /* Sportsbooks image */
+    .snapshot-img.sports-img {
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    /* Crystal brands white frame setup */
     .snapshot-slot.light-frame {
       background: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
-    /* COMPACTED WANZA TELEMETRY CARD */
+    .snapshot-img.crystal-img {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* COMPACTED WANZA TELEMETRY WIDGET (MATCHES 205px HEIGHT) */
     .wanza-card-widget {
       width: 100%;
       height: 100%;
       background: #fcfcfb;
       color: #1a1a1e;
-      padding: 1rem 1.15rem;
+      padding: 0.95rem 1.15rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -519,7 +540,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #475569;
-      margin-top: 0.2rem;
+      margin-top: 0.15rem;
     }
 
     .wanza-widget-kpi {
@@ -530,7 +551,7 @@
       line-height: 1;
       display: flex;
       align-items: baseline;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
 
     .wanza-widget-kpi span {
@@ -548,7 +569,7 @@
       color: #166534;
       font-size: 0.6rem;
       font-weight: 500;
-      padding: 0.12rem 0.45rem;
+      padding: 0.1rem 0.45rem;
       border-radius: 4px;
       width: fit-content;
     }
@@ -812,7 +833,7 @@
       <div class="hero-kicker">Core Engineering Philosophy</div>
       <h2 class="hero-headline">From messy data to <em>usable products.</em></h2>
       <p class="hero-description">
-        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications[cite: 7]. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use[cite: 7].
+        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use.
       </p>
       <div class="hero-triad">
         <span>Robust pipelines.</span>
@@ -844,19 +865,19 @@
             </div>
 
             <p class="card-description">
-              An end-to-end agricultural early-warning and anomaly screening system[cite: 5, 7]. Ingests optical satellite imagery, precipitation, and soil moisture across 15 × 14-day analysis bins using sensor-native resolution handling[cite: 1, 5]. Employs deterministic screening logic that outputs vector field boundaries for scouting teams without introducing spatial interpolation artifacts[cite: 1, 7].
+              An end-to-end agricultural early-warning and anomaly screening system. Ingests optical satellite imagery, precipitation, and soil moisture across 15 × 14-day analysis bins using sensor-native resolution handling. Employs deterministic screening logic that outputs vector field boundaries for scouting teams without introducing spatial interpolation artifacts.
             </p>
 
             <div class="evidence-row">
-              <span class="evidence-pill"><strong>503.10 ha</strong> focal pilot[cite: 1]</span>
+              <span class="evidence-pill"><strong>503.10 ha</strong> focal pilot</span>
               <span class="evidence-pill"><strong>83,850</strong> pixel/bin evaluations</span>
-              <span class="evidence-pill"><strong>28</strong> scouting clusters[cite: 1]</span>
-              <span class="evidence-pill"><strong>104</strong> automated tests[cite: 1]</span>
-              <span class="evidence-pill">Python / xarray / Dask / GeoPandas / STAC[cite: 1]</span>
+              <span class="evidence-pill"><strong>28</strong> scouting clusters</span>
+              <span class="evidence-pill"><strong>104</strong> automated tests</span>
+              <span class="evidence-pill">Python / xarray / Dask / GeoPandas / STAC</span>
             </div>
 
             <div class="snapshot-slot">
-              <img src="satellite_flag_to_triage_2023.png" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" />
+              <img src="satellite_flag_to_triage_2023.png" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img triage-img" />
             </div>
           </div>
 
@@ -877,7 +898,7 @@
             </div>
 
             <p class="card-description">
-              A source-grounded farm management and decision-support system built around real operational records[cite: 1, 5]. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while explicitly preserving missing or unknown source data rather than inventing values[cite: 1, 5].
+              A source-grounded farm management and decision-support system built around real operational records. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while explicitly preserving missing or unknown source data rather than inventing values.
             </p>
 
             <div class="evidence-row">
@@ -945,19 +966,19 @@
             </div>
 
             <p class="card-description">
-              An independent football intelligence platform covering player performance across African and European football, combining automated data acquisition, statistical analysis, player benchmarking and technical reporting[cite: 1, 7].
+              An independent football intelligence platform covering player performance across African and European football, combining automated data acquisition, statistical analysis, player benchmarking and technical reporting.
             </p>
 
             <div class="evidence-row">
               <span class="evidence-pill"><strong>30,000+</strong> organic reads</span>
-              <span class="evidence-pill"><strong>10+</strong> technical dossiers[cite: 1]</span>
+              <span class="evidence-pill"><strong>10+</strong> technical dossiers</span>
               <span class="evidence-pill">Kenyan player benchmarks</span>
               <span class="evidence-pill">Premier League analysis</span>
               <span class="evidence-pill">AFCON 2025 analysis</span>
             </div>
 
             <div class="snapshot-slot">
-              <img src="chilianalysis.png" alt="ChiliAnalysis football player intelligence platform" class="snapshot-img" />
+              <img src="chilianalysis.png" alt="ChiliAnalysis football player intelligence platform" class="snapshot-img chili-img" />
             </div>
           </div>
 
@@ -991,7 +1012,7 @@
             </div>
 
             <div class="snapshot-slot">
-              <img src="sportbooks.jpg" alt="World Cup quantitative forecasting model sportsbooks odds board" class="snapshot-img" />
+              <img src="sportbooks.jpg" alt="World Cup quantitative forecasting model sportsbooks odds board" class="snapshot-img sports-img" />
             </div>
           </div>
 
@@ -1012,7 +1033,7 @@
             </div>
 
             <p class="card-description">
-              Production commercial website built for a Kenyan branding, advertising and events company[cite: 1, 7]. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows[cite: 1, 4].
+              Production commercial website built for a Kenyan branding, advertising and events company. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows.
             </p>
 
             <div class="evidence-row">
@@ -1023,7 +1044,7 @@
             </div>
 
             <div class="snapshot-slot light-frame">
-              <img src="crystal-brands.png" alt="Crystal Brands commercial website" class="snapshot-img" />
+              <img src="crystal-brands.png" alt="Crystal Brands commercial website" class="snapshot-img crystal-img" />
             </div>
           </div>
 
@@ -1049,9 +1070,9 @@
           <div>
             <h3>YOLOv8 Eliteserien Football Detection</h3>
             <div class="stack-tag">Computer Vision · YOLOv8 · Video</div>
-            <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball[cite: 1, 6].</p>
+            <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
+          <a class="tech-link" href="https://medium.com/@waynemataara/training-yolov8-for-football-object-detection-insights-from-the-norwegian-eliteserien-7f0d00d28be8" target="_blank" rel="noopener">View Article on Medium ↗</a>
         </div>
 
         <!-- b) MUFC Goals & Passing — Statistical Modelling -->
@@ -1061,7 +1082,7 @@
             <div class="stack-tag">R · GLMs · Negative Binomial · Mixed Effects</div>
             <p>Applied statistical modelling investigating attacking sequences across 38 matches. Evaluated relationships between assist profiles, expected goals (xG), and final goal outcomes using mixed-effects regression.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Technical Note ↗</a>
+          <a class="tech-link" href="https://github.com/chilispammm/PProjects/tree/master/GLMs%20to%20analyze%20MUFC%20Goals%20with%20Passing%20data" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
         <!-- c) Road Surface Anomaly Detection -->
@@ -1069,9 +1090,9 @@
           <div>
             <h3>Road Surface Anomaly Detection</h3>
             <div class="stack-tag">PyTorch · SimCLR · ResNet18 · Vision</div>
-            <p>Self-supervised contrastive learning framework applied across 3,000+ pavement images to learn structural representation embeddings, benchmarked via linear evaluation and t-SNE clustering[cite: 1, 6].</p>
+            <p>Self-supervised contrastive learning framework applied across 3,000+ pavement images to learn structural representation embeddings, benchmarked via linear evaluation and t-SNE clustering.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
+          <a class="tech-link" href="https://github.com/chilispammm/PProjects/tree/master/road-cracks-detection" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
         <!-- d) Job Scraping & NLP Classification -->
@@ -1079,9 +1100,9 @@
           <div>
             <h3>Job Scraping & NLP Classification</h3>
             <div class="stack-tag">Python · Web Scraping · NLP · Automation</div>
-            <p>Automated collection pipeline navigating dynamic postings[cite: 1, 5]. Implements rate limiting, user-agent handling, HTML normalization, entity extraction, and automated skill taxonomy tagging into structured CSV exports[cite: 1].</p>
+            <p>Automated collection pipeline navigating dynamic postings. Implements rate limiting, user-agent handling, HTML normalization, entity extraction, and automated skill taxonomy tagging into structured CSV exports.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Codebase ↗</a>
+          <a class="tech-link" href="https://github.com/chilispammm/PProjects" target="_blank" rel="noopener">View Codebase ↗</a>
         </div>
 
         <!-- e) Premier League Forward Performance -->
@@ -1091,7 +1112,7 @@
             <div class="stack-tag">R · Multinomial Models · GLM</div>
             <p>Statistical evaluation of forward finishing performance, shot distribution metrics, and goal expectancy profiles using generalized linear and multinomial models across multi-season league datasets.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Case Study ↗</a>
+          <a class="tech-link" href="https://github.com/chilispammm/PProjects/tree/master/Multinomial%20and%20Generalized%20Linear%20Model%20Applications%20in%20Analyzing%20Premier%20League%20Forward%20Performance" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
         <!-- f) African Wildlife Image Classification -->
@@ -1099,9 +1120,9 @@
           <div>
             <h3>African Wildlife Image Classification</h3>
             <div class="stack-tag">TensorFlow · Keras · OpenCV · CNN</div>
-            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data[cite: 1, 7]. Covers image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis[cite: 1, 7].</p>
+            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data. Covers image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis.</p>
           </div>
-          <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
+          <a class="tech-link" href="https://github.com/chilispammm/PProjects/tree/master/wildlife-image-classification" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
       </div>
@@ -1119,18 +1140,18 @@
         <div class="inventory-row">
           <div class="inventory-label">Core</div>
           <div class="inventory-items">
-            <p>Python · SQL · R[cite: 4, 7]</p>
-            <p>Pandas · NumPy · scikit-learn · PyTorch · TensorFlow/Keras[cite: 4, 7]</p>
-            <p>Data Engineering · ETL / Data Pipelines · Web Scraping · API Integration · Automation[cite: 4, 7]</p>
-            <p>Statistical Modelling · Machine Learning · Data Analysis · Data Visualisation[cite: 4, 7]</p>
+            <p>Python · SQL · R</p>
+            <p>Pandas · NumPy · scikit-learn · PyTorch · TensorFlow/Keras</p>
+            <p>Data Engineering · ETL / Data Pipelines · Web Scraping · API Integration · Automation</p>
+            <p>Statistical Modelling · Machine Learning · Data Analysis · Data Visualisation</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Applied AI & Analytics</div>
           <div class="inventory-items">
-            <p>Computer Vision · NLP · Deep Learning · Feature Engineering · Model Evaluation[cite: 4, 7]</p>
-            <p>XGBoost · LightGBM · YOLOv8 · OpenCV · spaCy · Sentence-BERT[cite: 1, 4, 7]</p>
+            <p>Computer Vision · NLP · Deep Learning · Feature Engineering · Model Evaluation</p>
+            <p>XGBoost · LightGBM · YOLOv8 · OpenCV · spaCy · Sentence-BERT</p>
             <p>Bayesian Modelling · Hierarchical Models · MCMC · Monte Carlo Simulation · Forecasting</p>
             <p>GLMs · Mixed-Effects Models · Quantitative Modelling</p>
           </div>
@@ -1139,27 +1160,27 @@
         <div class="inventory-row">
           <div class="inventory-label">Geospatial & Agri Intelligence</div>
           <div class="inventory-items">
-            <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science[cite: 4, 7]</p>
-            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI[cite: 4, 7]</p>
-            <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS[cite: 4, 7]</p>
+            <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science</p>
+            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI</p>
+            <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Data & Application Stack</div>
           <div class="inventory-items">
-            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest[cite: 4, 7]</p>
-            <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel[cite: 4, 5, 7]</p>
-            <p>BeautifulSoup · Selenium · Playwright · Hugging Face[cite: 4, 7]</p>
+            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest</p>
+            <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</p>
+            <p>BeautifulSoup · Selenium · Playwright · Hugging Face</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Domain Experience</div>
           <div class="inventory-items">
-            <p>Football Analytics · Player Intelligence · Sports Modelling[cite: 1, 7]</p>
-            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics[cite: 1, 7]</p>
-            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows[cite: 4, 7]</p>
+            <p>Football Analytics · Player Intelligence · Sports Modelling</p>
+            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics</p>
+            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows</p>
           </div>
         </div>
 
