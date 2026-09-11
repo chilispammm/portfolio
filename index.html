@@ -14,17 +14,17 @@
   <style>
     :root {
       --bg: #07080a;
-      --card-bg: rgba(16, 18, 25, 0.65);
-      --card-hover: rgba(22, 25, 36, 0.85);
-      --border: rgba(255, 255, 255, 0.07);
-      --border-accent: rgba(223, 183, 67, 0.28);
+      --card-bg: rgba(16, 18, 25, 0.72);
+      --card-hover: rgba(22, 25, 36, 0.9);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(223, 183, 67, 0.3);
       --text: #f0f2f5;
       --text-muted: #9aa1b2;
       --text-dim: #636a7d;
       --gold: #dfb743;
       --gold-bright: #f5d77f;
       --gold-dim: rgba(223, 183, 67, 0.08);
-      --gold-border: rgba(223, 183, 67, 0.2);
+      --gold-border: rgba(223, 183, 67, 0.22);
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
       
@@ -38,7 +38,7 @@
       --radius-md: 14px;
       --radius-lg: 20px;
       --shadow-apple: 0 4px 24px -1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
-      --shadow-hover: 0 14px 40px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(223, 183, 67, 0.3);
+      --shadow-hover: 0 14px 40px -4px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(223, 183, 67, 0.32);
       --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -163,13 +163,6 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     .avatar-placeholder {
       display: flex;
       flex-direction: column;
@@ -194,7 +187,7 @@
       margin-top: 2px;
     }
 
-    /* EDITORIAL QUOTE BOX */
+    /* EDITORIAL QUOTE HERO */
     .editorial-hero {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -294,7 +287,7 @@
       color: #9aa1b2;
     }
 
-    /* FEATURED GRID */
+    /* 2-COLUMN FEATURED GRID */
     .featured-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -310,6 +303,7 @@
       }
     }
 
+    /* BALANCED CARD CONTAINER */
     .project-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -320,6 +314,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 100%;
       transition: transform 0.28s var(--ease-apple), border-color 0.28s var(--ease-apple), box-shadow 0.28s var(--ease-apple), background-color 0.28s var(--ease-apple);
     }
 
@@ -328,6 +323,12 @@
       border-color: var(--border-accent);
       background-color: var(--card-hover);
       box-shadow: var(--shadow-hover);
+    }
+
+    .card-content-top {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .card-meta {
@@ -389,29 +390,41 @@
     }
 
     .card-description {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
       font-weight: 300;
       line-height: 1.55;
+      min-height: 4rem;
     }
 
-    /* EVIDENCE STRIP */
+    .featured-lead .card-description {
+      min-height: auto;
+    }
+
+    /* COMPACT EVIDENCE ROW WITH MIN-HEIGHT ALIGNMENT */
     .evidence-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
+      gap: 0.35rem;
+      margin-bottom: 1.1rem;
+      min-height: 52px;
+      align-content: flex-start;
+    }
+
+    .featured-lead .evidence-row {
+      min-height: auto;
     }
 
     .evidence-pill {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.67rem;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: #e2e8f0;
-      padding: 0.2rem 0.5rem;
+      padding: 0.18rem 0.45rem;
       border-radius: 4px;
+      line-height: 1.2;
     }
 
     .evidence-pill strong {
@@ -419,24 +432,26 @@
       font-weight: 500;
     }
 
-    /* SNAPSHOT CONTAINERS */
+    /* UNIFIED 16:9.5 ASPECT RATIO SNAPSHOT CONTAINER */
     .snapshot-slot {
-      margin: 0.5rem 0 1.2rem 0;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 0.25rem 0 1.2rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: var(--radius-sm);
-      background: #090a0e;
-      height: 180px;
+      background: #0b0c12;
+      width: 100%;
+      aspect-ratio: 16 / 9.5;
       position: relative;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
       transition: all 0.25s var(--ease-apple);
     }
 
     .featured-lead .snapshot-slot {
-      height: 240px;
+      aspect-ratio: 21 / 9;
+      max-height: 300px;
     }
 
     .project-card:hover .snapshot-slot {
@@ -447,43 +462,26 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
       display: block;
-      border-radius: calc(var(--radius-sm) - 1px);
     }
 
-    .snapshot-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      color: var(--text-dim);
-      text-align: center;
-      padding: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
+    /* SPECIAL FRAMING FOR WHITE / LIGHT BACKGROUND SCREENSHOTS */
+    .snapshot-slot.light-frame {
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
-    .snapshot-tag {
-      font-size: 0.64rem;
-      color: var(--gold);
-      background: var(--gold-dim);
-      border: 1px solid var(--gold-border);
-      padding: 0.12rem 0.42rem;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* WANZA EMBEDDED TELEMETRY CARD */
+    /* COMPACTED WANZA TELEMETRY CARD */
     .wanza-card-widget {
       width: 100%;
-      background: #fdfdfc;
+      height: 100%;
+      background: #fcfcfb;
       color: #1a1a1e;
-      border-radius: 12px;
-      padding: 1.35rem 1.45rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+      padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       font-family: var(--font-body);
       text-align: left;
     }
@@ -493,11 +491,10 @@
       justify-content: space-between;
       align-items: center;
       font-family: var(--font-mono);
-      font-size: 0.64rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #64748b;
-      margin-bottom: 0.5rem;
     }
 
     .wanza-widget-top .live-pill {
@@ -510,34 +507,36 @@
 
     .wanza-widget-top .live-pill::before {
       content: "";
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: #16a34a;
     }
 
     .wanza-widget-label {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.62rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #475569;
-      margin-bottom: 0.2rem;
+      margin-top: 0.2rem;
     }
 
     .wanza-widget-kpi {
       font-family: var(--font-heading);
-      font-size: 2.1rem;
+      font-size: 1.85rem;
       font-weight: 600;
       color: #0f172a;
       line-height: 1;
-      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
     }
 
     .wanza-widget-kpi span {
       font-family: var(--font-serif);
       font-weight: 400;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       color: #334155;
     }
 
@@ -547,25 +546,25 @@
       gap: 0.25rem;
       background: #e8f5e9;
       color: #166534;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      padding: 0.18rem 0.5rem;
+      padding: 0.12rem 0.45rem;
       border-radius: 4px;
-      margin-bottom: 0.75rem;
+      width: fit-content;
     }
 
     .wanza-sparkline {
       width: 100%;
-      height: 48px;
-      margin: 0.3rem 0 0.85rem 0;
+      height: 38px;
+      margin: 0.1rem 0;
     }
 
     .wanza-widget-footer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       border-top: 1px solid #e2e8f0;
-      padding-top: 0.65rem;
-      gap: 0.5rem;
+      padding-top: 0.45rem;
+      gap: 0.35rem;
     }
 
     .wanza-foot-item {
@@ -575,16 +574,16 @@
 
     .wanza-foot-num {
       font-family: var(--font-heading);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: #0f172a;
     }
 
     .wanza-foot-lbl {
       font-family: var(--font-mono);
-      font-size: 0.58rem;
+      font-size: 0.54rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       color: #64748b;
     }
 
@@ -592,8 +591,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: auto;
-      padding-top: 0.5rem;
+      padding-top: 0.35rem;
     }
 
     .card-link {
@@ -618,7 +616,7 @@
       color: var(--amber);
     }
 
-    /* SECTION 02: CLEAN TECHNICAL CARDS */
+    /* SECTION 02: TECHNICAL PROJECTS */
     .tech-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -814,7 +812,7 @@
       <div class="hero-kicker">Core Engineering Philosophy</div>
       <h2 class="hero-headline">From messy data to <em>usable products.</em></h2>
       <p class="hero-description">
-        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use.
+        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications[cite: 7]. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use[cite: 7].
       </p>
       <div class="hero-triad">
         <span>Robust pipelines.</span>
@@ -836,7 +834,7 @@
         
         <!-- 1. Crop Stress Intelligence (Lead Showcase) -->
         <div class="project-card featured-lead">
-          <div>
+          <div class="card-content-top">
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">Crop Stress Intelligence</div>
@@ -846,23 +844,19 @@
             </div>
 
             <p class="card-description">
-              An end-to-end agricultural early-warning and anomaly screening system. Ingests optical satellite imagery, precipitation, and soil moisture across 15 × 14-day analysis bins using sensor-native resolution handling. Employs deterministic screening logic that outputs vector field boundaries for scouting teams without introducing spatial interpolation artifacts.
+              An end-to-end agricultural early-warning and anomaly screening system[cite: 5, 7]. Ingests optical satellite imagery, precipitation, and soil moisture across 15 × 14-day analysis bins using sensor-native resolution handling[cite: 1, 5]. Employs deterministic screening logic that outputs vector field boundaries for scouting teams without introducing spatial interpolation artifacts[cite: 1, 7].
             </p>
 
             <div class="evidence-row">
-              <span class="evidence-pill"><strong>503.10 ha</strong> focal pilot</span>
+              <span class="evidence-pill"><strong>503.10 ha</strong> focal pilot[cite: 1]</span>
               <span class="evidence-pill"><strong>83,850</strong> pixel/bin evaluations</span>
-              <span class="evidence-pill"><strong>28</strong> scouting clusters</span>
-              <span class="evidence-pill"><strong>104</strong> automated tests</span>
-              <span class="evidence-pill">Python / xarray / Dask / GeoPandas / STAC</span>
+              <span class="evidence-pill"><strong>28</strong> scouting clusters[cite: 1]</span>
+              <span class="evidence-pill"><strong>104</strong> automated tests[cite: 1]</span>
+              <span class="evidence-pill">Python / xarray / Dask / GeoPandas / STAC[cite: 1]</span>
             </div>
 
             <div class="snapshot-slot">
-              <img src="crop-stress-map.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" />
-              <div class="snapshot-placeholder" style="display: none;">
-                <span class="snapshot-tag">Raster / Screening Map</span>
-                <span>Uasin Gishu 503-Hectare Scouting Polygons & Multi-Temporal Persistence Maps</span>
-              </div>
+              <img src="satellite_flag_to_triage_2023.png" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" />
             </div>
           </div>
 
@@ -871,9 +865,9 @@
           </div>
         </div>
 
-        <!-- 2. Wanza Farm Management System (With Embedded UI Telemetry Card) -->
+        <!-- 2. Wanza Farm Management System -->
         <div class="project-card">
-          <div>
+          <div class="card-content-top">
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">Wanza Farm Management System</div>
@@ -883,18 +877,18 @@
             </div>
 
             <p class="card-description">
-              A source-grounded farm management and decision-support system built around real operational records. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while explicitly preserving missing or unknown source data rather than inventing values.
+              A source-grounded farm management and decision-support system built around real operational records[cite: 1, 5]. Reconciles livestock herd movements, lactation yields, crop cycles, and resources into relational schemas while explicitly preserving missing or unknown source data rather than inventing values[cite: 1, 5].
             </p>
 
             <div class="evidence-row">
               <span class="evidence-pill"><strong>42</strong> registered animals</span>
               <span class="evidence-pill"><strong>23</strong> crop plots</span>
               <span class="evidence-pill"><strong>32,761.27 L</strong> milk output</span>
-              <span class="evidence-pill"><strong>100%</strong> census reconciliation (8 stages)</span>
+              <span class="evidence-pill"><strong>100%</strong> census reconciliation</span>
               <span class="evidence-pill"><strong>84+</strong> validation tests</span>
             </div>
 
-            <div class="snapshot-slot" style="background: transparent; border: none; padding: 0.2rem 0; height: auto;">
+            <div class="snapshot-slot" style="padding: 0; border: none; background: transparent;">
               <div class="wanza-card-widget">
                 <div class="wanza-widget-top">
                   <span>Live · Wanza Farm</span>
@@ -904,16 +898,16 @@
                 <div class="wanza-widget-kpi">7,845 <span>L</span></div>
                 <div class="wanza-badge-pill">▲ Tracked against prior period</div>
                 
-                <svg class="wanza-sparkline" viewBox="0 0 320 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="wanza-sparkline" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <linearGradient id="wanzaGrad" x1="0" y1="0" x2="0" y2="50" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#15803d" stop-opacity="0.25" />
+                    <linearGradient id="wanzaGrad" x1="0" y1="0" x2="0" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#15803d" stop-opacity="0.28" />
                       <stop offset="1" stop-color="#15803d" stop-opacity="0.0" />
                     </linearGradient>
                   </defs>
-                  <path d="M0 32 C 30 31, 40 37, 70 36 C 95 35, 110 21, 130 22 C 150 23, 160 38, 185 36 C 205 34, 215 15, 230 16 C 245 17, 255 38, 270 36 C 285 34, 295 9, 310 10 C 315 10, 318 16, 320 18 L 320 50 L 0 50 Z" fill="url(#wanzaGrad)"/>
-                  <path d="M0 32 C 30 31, 40 37, 70 36 C 95 35, 110 21, 130 22 C 150 23, 160 38, 185 36 C 205 34, 215 15, 230 16 C 245 17, 255 38, 270 36 C 285 34, 295 9, 310 10 C 315 10, 318 16, 320 18" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="310" cy="10" r="3" fill="#15803d" />
+                  <path d="M0 26 C 30 25, 40 30, 70 29 C 95 28, 110 16, 130 17 C 150 18, 160 31, 185 29 C 205 27, 215 11, 230 12 C 245 13, 255 31, 270 29 C 285 27, 295 7, 310 8 C 315 8, 318 13, 320 15 L 320 40 L 0 40 Z" fill="url(#wanzaGrad)"/>
+                  <path d="M0 26 C 30 25, 40 30, 70 29 C 95 28, 110 16, 130 17 C 150 18, 160 31, 185 29 C 205 27, 215 11, 230 12 C 245 13, 255 31, 270 29 C 285 27, 295 7, 310 8 C 315 8, 318 13, 320 15" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="310" cy="8" r="2.8" fill="#15803d" />
                 </svg>
 
                 <div class="wanza-widget-footer">
@@ -923,11 +917,11 @@
                   </div>
                   <div class="wanza-foot-item">
                     <span class="wanza-foot-num">68</span>
-                    <span class="wanza-foot-lbl">Lactation Records</span>
+                    <span class="wanza-foot-lbl">Lactations</span>
                   </div>
                   <div class="wanza-foot-item">
                     <span class="wanza-foot-num">42</span>
-                    <span class="wanza-foot-lbl">Animals Tracked</span>
+                    <span class="wanza-foot-lbl">Tracked Animals</span>
                   </div>
                 </div>
               </div>
@@ -941,7 +935,7 @@
 
         <!-- 3. ChiliAnalysis Football Intelligence -->
         <div class="project-card">
-          <div>
+          <div class="card-content-top">
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">ChiliAnalysis Football Intelligence</div>
@@ -951,13 +945,13 @@
             </div>
 
             <p class="card-description">
-              An independent football intelligence platform covering player performance across African and European football, combining automated data acquisition, statistical analysis, player benchmarking and technical reporting.
+              An independent football intelligence platform covering player performance across African and European football, combining automated data acquisition, statistical analysis, player benchmarking and technical reporting[cite: 1, 7].
             </p>
 
             <div class="evidence-row">
               <span class="evidence-pill"><strong>30,000+</strong> organic reads</span>
-              <span class="evidence-pill"><strong>10+</strong> technical dossiers</span>
-              <span class="evidence-pill">Kenyan player benchmarking</span>
+              <span class="evidence-pill"><strong>10+</strong> technical dossiers[cite: 1]</span>
+              <span class="evidence-pill">Kenyan player benchmarks</span>
               <span class="evidence-pill">Premier League analysis</span>
               <span class="evidence-pill">AFCON 2025 analysis</span>
             </div>
@@ -974,7 +968,7 @@
 
         <!-- 4. World Cup 2026 Quantitative Forecasting Engine -->
         <div class="project-card">
-          <div>
+          <div class="card-content-top">
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">World Cup 2026 Quantitative Forecasting Engine</div>
@@ -984,15 +978,16 @@
             </div>
 
             <p class="card-description">
-              A quantitative modelling system engineered for international tournament outcome forecasting and market intelligence. Integrates hierarchical Bayesian Poisson models via MCMC, gradient-boosted tree ensembles (XGBoost, LightGBM, Random Forest), feature engineering, Monte Carlo tournament simulations, and de-vigging with Kelly-based risk sizing.
+              A quantitative modelling system engineered for international tournament outcome forecasting and market intelligence. Integrates hierarchical Bayesian Poisson models via MCMC, tree ensembles, Monte Carlo tournament simulations, and de-vigging with Kelly-based risk sizing.
             </p>
 
             <div class="evidence-row">
-              <span class="evidence-pill"><strong>49,215</strong> international matches</span>
-              <span class="evidence-pill"><strong>32,122</strong> modern training sample</span>
-              <span class="evidence-pill"><strong>6,425</strong> unseen test matches</span>
-              <span class="evidence-pill"><strong>61.73%</strong> 1X2 | <strong>80.57%</strong> DNB</span>
-              <span class="evidence-pill"><strong>85.74%</strong> High-Conf DNB</span>
+              <span class="evidence-pill"><strong>49,215</strong> matches</span>
+              <span class="evidence-pill"><strong>32,122</strong> training set</span>
+              <span class="evidence-pill"><strong>6,425</strong> test set</span>
+              <span class="evidence-pill"><strong>61.73%</strong> 1X2</span>
+              <span class="evidence-pill"><strong>80.57%</strong> DNB</span>
+              <span class="evidence-pill"><strong>85.74%</strong> High-Conf</span>
             </div>
 
             <div class="snapshot-slot">
@@ -1001,13 +996,13 @@
           </div>
 
           <div class="card-footer">
-            <span class="card-private-note">Architecture & validation review available on request</span>
+            <span class="card-private-note">Architecture & validation review on request</span>
           </div>
         </div>
 
         <!-- 5. Crystal Brands Communications -->
         <div class="project-card">
-          <div>
+          <div class="card-content-top">
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">Crystal Brands Communications</div>
@@ -1017,7 +1012,7 @@
             </div>
 
             <p class="card-description">
-              Production commercial website built for a Kenyan branding, advertising and events company. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows.
+              Production commercial website built for a Kenyan branding, advertising and events company[cite: 1, 7]. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows[cite: 1, 4].
             </p>
 
             <div class="evidence-row">
@@ -1027,7 +1022,7 @@
               <span class="evidence-pill">Enquiry & contact workflow</span>
             </div>
 
-            <div class="snapshot-slot">
+            <div class="snapshot-slot light-frame">
               <img src="crystal-brands.png" alt="Crystal Brands commercial website" class="snapshot-img" />
             </div>
           </div>
@@ -1054,7 +1049,7 @@
           <div>
             <h3>YOLOv8 Eliteserien Football Detection</h3>
             <div class="stack-tag">Computer Vision · YOLOv8 · Video</div>
-            <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball.</p>
+            <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball[cite: 1, 6].</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
@@ -1074,7 +1069,7 @@
           <div>
             <h3>Road Surface Anomaly Detection</h3>
             <div class="stack-tag">PyTorch · SimCLR · ResNet18 · Vision</div>
-            <p>Self-supervised contrastive learning framework applied across 3,000+ pavement images to learn structural representation embeddings, benchmarked via linear evaluation and t-SNE clustering.</p>
+            <p>Self-supervised contrastive learning framework applied across 3,000+ pavement images to learn structural representation embeddings, benchmarked via linear evaluation and t-SNE clustering[cite: 1, 6].</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
@@ -1084,7 +1079,7 @@
           <div>
             <h3>Job Scraping & NLP Classification</h3>
             <div class="stack-tag">Python · Web Scraping · NLP · Automation</div>
-            <p>Automated collection pipeline navigating dynamic postings. Implements rate limiting, user-agent handling, HTML normalization, entity extraction, and automated skill taxonomy tagging into structured CSV exports.</p>
+            <p>Automated collection pipeline navigating dynamic postings[cite: 1, 5]. Implements rate limiting, user-agent handling, HTML normalization, entity extraction, and automated skill taxonomy tagging into structured CSV exports[cite: 1].</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Codebase ↗</a>
         </div>
@@ -1104,7 +1099,7 @@
           <div>
             <h3>African Wildlife Image Classification</h3>
             <div class="stack-tag">TensorFlow · Keras · OpenCV · CNN</div>
-            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data. Covers image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis.</p>
+            <p>Convolutional neural network pipeline classifying regional wildlife species from camera-trap data[cite: 1, 7]. Covers image preprocessing, regularization, confusion matrix evaluation, and overfitting analysis[cite: 1, 7].</p>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
@@ -1124,18 +1119,18 @@
         <div class="inventory-row">
           <div class="inventory-label">Core</div>
           <div class="inventory-items">
-            <p>Python · SQL · R</p>
-            <p>Pandas · NumPy · scikit-learn · PyTorch · TensorFlow/Keras</p>
-            <p>Data Engineering · ETL / Data Pipelines · Web Scraping · API Integration · Automation</p>
-            <p>Statistical Modelling · Machine Learning · Data Analysis · Data Visualisation</p>
+            <p>Python · SQL · R[cite: 4, 7]</p>
+            <p>Pandas · NumPy · scikit-learn · PyTorch · TensorFlow/Keras[cite: 4, 7]</p>
+            <p>Data Engineering · ETL / Data Pipelines · Web Scraping · API Integration · Automation[cite: 4, 7]</p>
+            <p>Statistical Modelling · Machine Learning · Data Analysis · Data Visualisation[cite: 4, 7]</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Applied AI & Analytics</div>
           <div class="inventory-items">
-            <p>Computer Vision · NLP · Deep Learning · Feature Engineering · Model Evaluation</p>
-            <p>XGBoost · LightGBM · YOLOv8 · OpenCV · spaCy · Sentence-BERT</p>
+            <p>Computer Vision · NLP · Deep Learning · Feature Engineering · Model Evaluation[cite: 4, 7]</p>
+            <p>XGBoost · LightGBM · YOLOv8 · OpenCV · spaCy · Sentence-BERT[cite: 1, 4, 7]</p>
             <p>Bayesian Modelling · Hierarchical Models · MCMC · Monte Carlo Simulation · Forecasting</p>
             <p>GLMs · Mixed-Effects Models · Quantitative Modelling</p>
           </div>
@@ -1144,27 +1139,27 @@
         <div class="inventory-row">
           <div class="inventory-label">Geospatial & Agri Intelligence</div>
           <div class="inventory-items">
-            <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science</p>
-            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI</p>
-            <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS</p>
+            <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science[cite: 4, 7]</p>
+            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI[cite: 4, 7]</p>
+            <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS[cite: 4, 7]</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Data & Application Stack</div>
           <div class="inventory-items">
-            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest</p>
-            <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</p>
-            <p>BeautifulSoup · Selenium · Playwright · Hugging Face</p>
+            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest[cite: 4, 7]</p>
+            <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel[cite: 4, 5, 7]</p>
+            <p>BeautifulSoup · Selenium · Playwright · Hugging Face[cite: 4, 7]</p>
           </div>
         </div>
 
         <div class="inventory-row">
           <div class="inventory-label">Domain Experience</div>
           <div class="inventory-items">
-            <p>Football Analytics · Player Intelligence · Sports Modelling</p>
-            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics</p>
-            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows</p>
+            <p>Football Analytics · Player Intelligence · Sports Modelling[cite: 1, 7]</p>
+            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics[cite: 1, 7]</p>
+            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows[cite: 4, 7]</p>
           </div>
         </div>
 
