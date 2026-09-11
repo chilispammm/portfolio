@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -27,9 +27,8 @@
       --gold-border: rgba(223, 183, 67, 0.2);
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
-      --emerald: #10b981;
-      --emerald-dim: rgba(16, 185, 129, 0.12);
       
+      --font-name: "Syne", -apple-system, sans-serif;
       --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-serif: "Instrument Serif", Georgia, serif;
@@ -101,14 +100,14 @@
       margin-bottom: 0.5rem;
     }
 
-    h1 {
-      font-family: var(--font-heading);
-      font-size: 2.25rem;
-      font-weight: 500;
-      letter-spacing: -0.025em;
+    h1.brand-name {
+      font-family: var(--font-name);
+      font-size: 2.65rem;
+      font-weight: 700;
+      letter-spacing: -0.035em;
       margin-bottom: 0.35rem;
       color: #ffffff;
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     .subtitle {
@@ -195,7 +194,7 @@
       margin-top: 2px;
     }
 
-    /* EDITORIAL QUOTE / STATEMENT BOX */
+    /* EDITORIAL QUOTE BOX */
     .editorial-hero {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -265,7 +264,7 @@
       font-weight: bold;
     }
 
-    /* SECTION HEADERS */
+    /* SECTIONS */
     section {
       margin-bottom: 4.5rem;
     }
@@ -423,10 +422,10 @@
     /* SNAPSHOT CONTAINERS */
     .snapshot-slot {
       margin: 0.5rem 0 1.2rem 0;
-      border: 1px dashed var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-sm);
-      background: rgba(9, 10, 14, 0.85);
-      min-height: 160px;
+      background: #090a0e;
+      height: 180px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -437,19 +436,18 @@
     }
 
     .featured-lead .snapshot-slot {
-      min-height: 220px;
+      height: 240px;
     }
 
     .project-card:hover .snapshot-slot {
       border-color: var(--gold-border);
-      background: rgba(13, 14, 20, 0.95);
     }
 
     .snapshot-img {
       width: 100%;
       height: 100%;
-      max-height: 320px;
       object-fit: cover;
+      object-position: center;
       display: block;
       border-radius: calc(var(--radius-sm) - 1px);
     }
@@ -478,7 +476,7 @@
       text-transform: uppercase;
     }
 
-    /* WANZA EMBEDDED TELEMETRY CARD (Matches Screenshot) */
+    /* WANZA EMBEDDED TELEMETRY CARD */
     .wanza-card-widget {
       width: 100%;
       background: #fdfdfc;
@@ -620,11 +618,11 @@
       color: var(--amber);
     }
 
-    /* TECHNICAL SUPPORTING GRID */
+    /* SECTION 02: CLEAN TECHNICAL CARDS (NO IMAGES, NO METRIC PILLS) */
     .tech-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 1.15rem;
     }
 
     @media (min-width: 680px) {
@@ -640,73 +638,67 @@
     }
 
     .tech-card {
-      background: rgba(255, 255, 255, 0.018);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 1.25rem;
+      padding: 1.45rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.25s var(--ease-apple);
+      box-shadow: var(--shadow-apple);
+      backdrop-filter: blur(12px);
+      transition: transform 0.28s var(--ease-apple), border-color 0.28s var(--ease-apple);
     }
 
     .tech-card:hover {
       border-color: var(--border-accent);
-      background: rgba(223, 183, 67, 0.025);
       transform: translateY(-2px);
     }
 
     .tech-card h3 {
       font-family: var(--font-heading);
-      font-size: 0.94rem;
+      font-size: 1.02rem;
       font-weight: 500;
       color: #ffffff;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
       line-height: 1.35;
+      letter-spacing: -0.015em;
     }
 
     .tech-card .stack-tag {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       color: var(--gold);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
       line-height: 1.4;
     }
 
     .tech-card p {
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       font-weight: 300;
-      line-height: 1.5;
-      margin-bottom: 0.85rem;
-    }
-
-    .tech-evidence-pill {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: #e2e8f0;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
-      margin-bottom: 0.75rem;
-      display: inline-block;
-      width: fit-content;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
     }
 
     .tech-link {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: var(--gold);
       text-decoration: none;
       margin-top: auto;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s var(--ease-apple);
     }
 
     .tech-link:hover {
-      text-decoration: underline;
+      border-bottom-color: var(--gold);
     }
 
-    /* COMPACT TECHNICAL INVENTORY */
+    /* SECTION 03: RECALIBRATED SKILLS INVENTORY */
     .skills-inventory {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -718,9 +710,9 @@
     .inventory-row {
       display: flex;
       flex-direction: column;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      gap: 0.35rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      gap: 0.4rem;
     }
 
     .inventory-row:last-child {
@@ -732,14 +724,14 @@
       padding-top: 0;
     }
 
-    @media (min-width: 680px) {
+    @media (min-width: 720px) {
       .inventory-row {
         flex-direction: row;
         align-items: baseline;
-        gap: 1.5rem;
+        gap: 2rem;
       }
       .inventory-label {
-        width: 190px;
+        width: 220px;
         flex-shrink: 0;
       }
       .inventory-items {
@@ -749,7 +741,7 @@
 
     .inventory-label {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -760,7 +752,15 @@
       font-size: 0.88rem;
       color: #d1d5db;
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    .inventory-items p {
+      margin-bottom: 0.25rem;
+    }
+
+    .inventory-items p:last-child {
+      margin-bottom: 0;
     }
 
     /* FOOTER */
@@ -786,7 +786,7 @@
       <div class="header-layout">
         <div class="header-text">
           <div class="kicker">Data · AI · Systems</div>
-          <h1>Wayne Chilionje</h1>
+          <h1 class="brand-name">Wayne Chilionje</h1>
           <div class="subtitle">Data & AI · Digital Systems · Analytics</div>
           <div class="meta-bar">
             <span>Nairobi, Kenya</span>
@@ -800,7 +800,6 @@
         <!-- Headshot Provision -->
         <div class="avatar-wrapper">
           <div class="avatar-inner">
-            <!-- To connect photo: <img src="assets/wayne-headshot.jpg" alt="Wayne Chilionje - Headshot" class="avatar-img" /> -->
             <div class="avatar-placeholder">
               <span class="avatar-initials">WC</span>
               <span class="avatar-hint">Photo</span>
@@ -810,7 +809,7 @@
       </div>
     </header>
 
-    <!-- EDITORIAL QUOTE / STATEMENT BOX (Matching Wanza/Mosaic Vibe) -->
+    <!-- EDITORIAL STATEMENT HERO -->
     <div class="editorial-hero">
       <div class="hero-kicker">Core Engineering Philosophy</div>
       <h2 class="hero-headline">From messy data to <em>usable products.</em></h2>
@@ -835,7 +834,7 @@
 
       <div class="featured-grid">
         
-        <!-- 1. Crop Stress Intelligence (Featured Lead) -->
+        <!-- 1. Crop Stress Intelligence (Lead Showcase) -->
         <div class="project-card featured-lead">
           <div>
             <div class="card-meta">
@@ -859,11 +858,7 @@
             </div>
 
             <div class="snapshot-slot">
-              <!-- Connect asset: <img src="assets/crop-stress-map.png" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" /> -->
-              <div class="snapshot-placeholder">
-                <span class="snapshot-tag">Raster / Screening Map</span>
-                <span>Uasin Gishu 503-Hectare Scouting Polygons & Multi-Temporal Persistence Maps</span>
-              </div>
+              <img src="assets/crop-stress-map.png" onerror="this.onerror=null; this.src='crop-stress-map.png';" alt="Crop stress screening map for agricultural intelligence in Uasin Gishu" class="snapshot-img" />
             </div>
           </div>
 
@@ -895,8 +890,7 @@
               <span class="evidence-pill"><strong>84+</strong> validation tests</span>
             </div>
 
-            <!-- Embedded Live Wanza Card Rendering (From Slide Reference) -->
-            <div class="snapshot-slot" style="background: transparent; border: none; padding: 0.25rem 0;">
+            <div class="snapshot-slot" style="background: transparent; border: none; padding: 0.2rem 0; height: auto;">
               <div class="wanza-card-widget">
                 <div class="wanza-widget-top">
                   <span>Live · Wanza Farm</span>
@@ -906,7 +900,6 @@
                 <div class="wanza-widget-kpi">7,845 <span>L</span></div>
                 <div class="wanza-badge-pill">▲ Tracked against prior period</div>
                 
-                <!-- Smooth SVG Wave Chart -->
                 <svg class="wanza-sparkline" viewBox="0 0 320 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="wanzaGrad" x1="0" y1="0" x2="0" y2="50" gradientUnits="userSpaceOnUse">
@@ -966,11 +959,7 @@
             </div>
 
             <div class="snapshot-slot">
-              <!-- Connect asset: <img src="assets/chilianalysis-platform.png" alt="ChiliAnalysis football player intelligence platform" class="snapshot-img" /> -->
-              <div class="snapshot-placeholder">
-                <span class="snapshot-tag">Platform Interface</span>
-                <span>chilianalysis.co.ke — Event Stream & Scouting Dossiers</span>
-              </div>
+              <img src="chilianalysis.jpg" onerror="this.onerror=null; this.src='assets/chilianalysis.jpg';" alt="ChiliAnalysis football player intelligence platform" class="snapshot-img" />
             </div>
           </div>
 
@@ -1003,11 +992,7 @@
             </div>
 
             <div class="snapshot-slot">
-              <!-- Connect asset: <img src="assets/wc26-engine.png" alt="World Cup quantitative forecasting model" class="snapshot-img" /> -->
-              <div class="snapshot-placeholder">
-                <span class="snapshot-tag">Simulation & Bayesian Model</span>
-                <span>Hierarchical Poisson State & Tournament Simulation Distribution</span>
-              </div>
+              <img src="sportbooks.jpg" onerror="this.onerror=null; this.src='assets/sportbooks.jpg';" alt="World Cup quantitative forecasting model sportsbooks odds board" class="snapshot-img" />
             </div>
           </div>
 
@@ -1039,11 +1024,7 @@
             </div>
 
             <div class="snapshot-slot">
-              <!-- Connect asset: <img src="assets/crystalbrands-live.png" alt="Crystal Brands commercial website" class="snapshot-img" /> -->
-              <div class="snapshot-placeholder">
-                <span class="snapshot-tag">Production Website</span>
-                <span>crystalbrands.co.ke — Live Corporate Platform</span>
-              </div>
+              <img src="crystal brands.jpg" onerror="this.onerror=null; this.src='assets/crystal brands.jpg';" alt="Crystal Brands commercial website" class="snapshot-img" />
             </div>
           </div>
 
@@ -1055,7 +1036,7 @@
       </div>
     </section>
 
-    <!-- SECTION 02: TECHNICAL PROJECTS -->
+    <!-- SECTION 02: TECHNICAL PROJECTS (SIMPLIFIED & CLEAN) -->
     <section>
       <div class="section-header">
         <span class="section-num">02</span>
@@ -1064,45 +1045,37 @@
 
       <div class="tech-grid">
         
-        <!-- YOLOv8 Eliteserien -->
+        <!-- a) YOLOv8 Eliteserien Football Detection -->
         <div class="tech-card">
           <div>
             <h3>YOLOv8 Eliteserien Football Detection</h3>
             <div class="stack-tag">Computer Vision · YOLOv8 · Video</div>
             <p>End-to-end football object-detection workflow using match footage, dataset preparation, training, evaluation and inference on players, referees, and the ball.</p>
           </div>
-          <div class="snapshot-slot" style="min-height: 105px; margin: 0 0 0.75rem 0;">
-            <!-- Connect asset: <img src="assets/yolo-detection.png" alt="YOLOv8 football player detection" class="snapshot-img" /> -->
-            <div class="snapshot-placeholder" style="padding: 0.75rem;">
-              <span class="snapshot-tag">Detection Frame</span>
-            </div>
-          </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
-        <!-- MUFC Goals & Passing -->
+        <!-- b) MUFC Goals & Passing — Statistical Modelling -->
         <div class="tech-card">
           <div>
             <h3>MUFC Goals & Passing — Statistical Modelling</h3>
             <div class="stack-tag">R · GLMs · Negative Binomial · Mixed Effects</div>
             <p>Applied statistical modelling investigating attacking sequences across 38 matches. Evaluated relationships between assist profiles, expected goals (xG), and final goal outcomes using mixed-effects regression.</p>
-            <div class="tech-evidence-pill">Assists p &lt; .001 · xG p = .002</div>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Technical Note ↗</a>
         </div>
 
-        <!-- Road Surface Anomaly -->
+        <!-- c) Road Surface Anomaly Detection -->
         <div class="tech-card">
           <div>
             <h3>Road Surface Anomaly Detection</h3>
             <div class="stack-tag">PyTorch · SimCLR · ResNet18 · Vision</div>
             <p>Self-supervised contrastive learning framework applied across 3,000+ pavement images to learn structural representation embeddings, benchmarked via linear evaluation and t-SNE clustering.</p>
-            <div class="tech-evidence-pill">99.0% downstream classification</div>
           </div>
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Repository ↗</a>
         </div>
 
-        <!-- Job Scraping & NLP -->
+        <!-- d) Job Scraping & NLP Classification -->
         <div class="tech-card">
           <div>
             <h3>Job Scraping & NLP Classification</h3>
@@ -1112,7 +1085,7 @@
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Codebase ↗</a>
         </div>
 
-        <!-- Premier League Forward Performance -->
+        <!-- e) Premier League Forward Performance -->
         <div class="tech-card">
           <div>
             <h3>Premier League Forward Performance</h3>
@@ -1122,7 +1095,7 @@
           <a class="tech-link" href="https://github.com/chilispammm" target="_blank" rel="noopener">View Case Study ↗</a>
         </div>
 
-        <!-- African Wildlife Image Classification -->
+        <!-- f) African Wildlife Image Classification -->
         <div class="tech-card">
           <div>
             <h3>African Wildlife Image Classification</h3>
@@ -1143,40 +1116,54 @@
       </div>
 
       <div class="skills-inventory">
+        
         <div class="inventory-row">
-          <div class="inventory-label">Languages</div>
-          <div class="inventory-items">Python · R · SQL · Bash</div>
+          <div class="inventory-label">Core</div>
+          <div class="inventory-items">
+            <p>Python · SQL · R</p>
+            <p>Pandas · NumPy · scikit-learn · PyTorch · TensorFlow/Keras</p>
+            <p>Data Engineering · ETL / Data Pipelines · Web Scraping · API Integration · Automation</p>
+            <p>Statistical Modelling · Machine Learning · Data Analysis · Data Visualisation</p>
+          </div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">Data & Engineering</div>
-          <div class="inventory-items">Pandas · NumPy · SQLAlchemy · SQLite · DuckDB · PySpark · Spark SQL · ETL / ELT Pipelines · Data Pipelines · Automation · Web Scraping (Playwright, Selenium, BeautifulSoup) · APIs & API Integration · Dynamic Web Data / XHR Analysis · Schema Validation · Data Quality & Reconciliation · Docker</div>
+          <div class="inventory-label">Applied AI & Analytics</div>
+          <div class="inventory-items">
+            <p>Computer Vision · NLP · Deep Learning · Feature Engineering · Model Evaluation</p>
+            <p>XGBoost · LightGBM · YOLOv8 · OpenCV · spaCy · Sentence-BERT</p>
+            <p>Bayesian Modelling · Hierarchical Models · MCMC · Monte Carlo Simulation · Forecasting</p>
+            <p>GLMs · Mixed-Effects Models · Quantitative Modelling</p>
+          </div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">AI & Machine Learning</div>
-          <div class="inventory-items">PyTorch · TensorFlow / Keras · scikit-learn · XGBoost · LightGBM · YOLO (YOLOv8) · OpenCV · Natural Language Processing (NLP) · spaCy · Sentence-BERT · Hugging Face · Deep Learning · Computer Vision · Model Evaluation · Feature Engineering</div>
+          <div class="inventory-label">Geospatial & Agri Intelligence</div>
+          <div class="inventory-items">
+            <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science</p>
+            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI</p>
+            <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS</p>
+          </div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">Analytics & Statistics</div>
-          <div class="inventory-items">Statistical Modelling · Generalized Linear Models (GLMs) · Negative Binomial Models · Mixed-Effects Models · Multinomial Models · Bayesian Modelling · Hierarchical Bayesian Models · MCMC · Forecasting · Monte Carlo Simulation · Quantitative Modelling · Data Visualisation · Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</div>
+          <div class="inventory-label">Data & Application Stack</div>
+          <div class="inventory-items">
+            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest</p>
+            <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</p>
+            <p>BeautifulSoup · Selenium · Playwright · Hugging Face</p>
+          </div>
         </div>
 
         <div class="inventory-row">
-          <div class="inventory-label">Geospatial & Agriculture</div>
-          <div class="inventory-items">Geospatial Analytics · Remote Sensing · Agricultural Intelligence · GIS · Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI · xarray · Dask · GeoPandas · Rasterio · STAC · QGIS · UN FAO RuralInvest & MAFAP Methodologies</div>
+          <div class="inventory-label">Domain Experience</div>
+          <div class="inventory-items">
+            <p>Football Analytics · Player Intelligence · Sports Modelling</p>
+            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics</p>
+            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows</p>
+          </div>
         </div>
 
-        <div class="inventory-row">
-          <div class="inventory-label">Sports Intelligence</div>
-          <div class="inventory-items">Sports Analytics · Football Analytics · Player Intelligence · Event Data Ingestion · Kinematic Profiling · Positional Benchmarking · Match Simulation</div>
-        </div>
-
-        <div class="inventory-row">
-          <div class="inventory-label">Development & Workflow</div>
-          <div class="inventory-items">Git · GitHub · Pytest · Linux / Bash · HTML5 · CSS3 · Modern JavaScript · Responsive Web Development · Technical Documentation · Reproducible Workflows</div>
-        </div>
       </div>
     </section>
 
