@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wayne Chilionje — Data Scientist · AI · Analytics · Digital Systems</title>
   <meta name="description" content="Portfolio of Wayne Chilionje — Data Scientist and Analytics Engineer specializing in data engineering, applied AI/ML, geospatial and agricultural intelligence, statistical modelling, and digital systems." />
-  <meta name="keywords" content="Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Engineer, Geospatial Data Scientist, Remote Sensing, Agricultural Data Science, GIS, Python, SQL, R, Machine Learning, Deep Learning, Computer Vision, NLP, Data Engineering, ETL, Data Analytics, Statistical Modelling, Bayesian Modelling, Forecasting, Data Visualisation, Power BI, Tableau, Streamlit, Pandas, NumPy, scikit-learn, PyTorch, TensorFlow, OpenCV, spaCy, Sentence-BERT, Hugging Face, XGBoost, LightGBM, YOLO, SQLAlchemy, PySpark, Docker, Git, GitHub, Web Scraping, API Integration, Data Pipelines, Automation, Geospatial Analytics, Sentinel-2, CHIRPS, NASA SMAP, GeoPandas, Rasterio, xarray, Dask, QGIS, STAC, Agricultural Intelligence, Sports Analytics, Football Analytics, Quantitative Modelling" />
+  <meta name="keywords" content="Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Engineer, Geospatial Data Scientist, Remote Sensing, Agricultural Data Science, GIS, Python, SQL, R, Machine Learning, Deep Learning, Computer Vision, NLP, Data Engineering, ETL, Data Analytics, Statistical Modelling, Bayesian Modelling, Forecasting, Data Visualisation, Power BI, Tableau, Streamlit, Pandas, NumPy, scikit-learn, PyTorch, TensorFlow, OpenCV, spaCy, Sentence-BERT, XGBoost, LightGBM, YOLO, SQLAlchemy, Git, GitHub, Web Scraping, API Integration, Data Pipelines, Automation, Geospatial Analytics, Sentinel-2, CHIRPS, NASA SMAP, GeoPandas, Rasterio, xarray, Dask, QGIS, STAC, Agricultural Intelligence, Sports Analytics, Football Analytics, Quantitative Modelling" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -28,7 +28,7 @@
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
       
-      --font-name: "Syne", -apple-system, sans-serif;
+      --font-name: "DM Serif Display", Georgia, "Times New Roman", serif;
       --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-serif: "Instrument Serif", Georgia, serif;
@@ -97,17 +97,21 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--gold);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
+    /* CHEZ-INSPIRED BRAND NAME WITH CHAMPAGNE-GOLD GRADIENT */
     h1.brand-name {
       font-family: var(--font-name);
-      font-size: 2.65rem;
-      font-weight: 700;
-      letter-spacing: -0.035em;
+      font-size: 2.9rem;
+      font-weight: 400;
+      letter-spacing: -0.015em;
       margin-bottom: 0.35rem;
-      color: #ffffff;
-      line-height: 1.1;
+      line-height: 1.12;
+      background: linear-gradient(135deg, #ffffff 20%, #f6edd9 55%, #dfb743 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
 
     .subtitle {
@@ -432,7 +436,7 @@
       font-weight: 500;
     }
 
-    /* STANDARDIZED SNAPSHOT CONTAINERS (EXACT HEIGHT LOCK) */
+    /* STANDARDIZED SNAPSHOT CONTAINERS */
     .snapshot-slot {
       margin: 0.25rem 0 1.15rem 0;
       border: 1px solid rgba(255, 255, 255, 0.09);
@@ -463,26 +467,22 @@
       display: block;
     }
 
-    /* Crop Stress satellite image */
     .snapshot-img.triage-img {
       object-fit: cover;
       object-position: center;
     }
 
-    /* ChiliAnalysis image - anchored left so text is never cropped */
     .snapshot-img.chili-img {
       object-fit: cover;
       object-position: left center;
       background: #000000;
     }
 
-    /* Sportsbooks image */
     .snapshot-img.sports-img {
       object-fit: cover;
       object-position: center 25%;
     }
 
-    /* Crystal brands white frame setup */
     .snapshot-slot.light-frame {
       background: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -493,13 +493,13 @@
       object-position: center top;
     }
 
-    /* COMPACTED WANZA TELEMETRY WIDGET (MATCHES 205px HEIGHT) */
+    /* SOURCE-GROUNDED WANZA OPERATIONAL SCORECARD */
     .wanza-card-widget {
       width: 100%;
       height: 100%;
       background: #fcfcfb;
       color: #1a1a1e;
-      padding: 0.95rem 1.15rem;
+      padding: 1.15rem 1.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -512,7 +512,7 @@
       justify-content: space-between;
       align-items: center;
       font-family: var(--font-mono);
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #64748b;
@@ -534,18 +534,22 @@
       background: #16a34a;
     }
 
+    .wanza-widget-header {
+      margin: 0.4rem 0;
+    }
+
     .wanza-widget-label {
       font-family: var(--font-mono);
-      font-size: 0.62rem;
+      font-size: 0.64rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #475569;
-      margin-top: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .wanza-widget-kpi {
       font-family: var(--font-heading);
-      font-size: 1.85rem;
+      font-size: 2.15rem;
       font-weight: 600;
       color: #0f172a;
       line-height: 1;
@@ -557,35 +561,23 @@
     .wanza-widget-kpi span {
       font-family: var(--font-serif);
       font-weight: 400;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: #334155;
     }
 
-    .wanza-badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      background: #e8f5e9;
-      color: #166534;
-      font-size: 0.6rem;
-      font-weight: 500;
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
-      width: fit-content;
-    }
-
-    .wanza-sparkline {
-      width: 100%;
-      height: 38px;
-      margin: 0.1rem 0;
+    .wanza-widget-subtext {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      color: #15803d;
+      margin-top: 0.25rem;
     }
 
     .wanza-widget-footer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       border-top: 1px solid #e2e8f0;
-      padding-top: 0.45rem;
-      gap: 0.35rem;
+      padding-top: 0.65rem;
+      gap: 0.4rem;
     }
 
     .wanza-foot-item {
@@ -595,14 +587,14 @@
 
     .wanza-foot-num {
       font-family: var(--font-heading);
-      font-size: 0.82rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: #0f172a;
     }
 
     .wanza-foot-lbl {
       font-family: var(--font-mono);
-      font-size: 0.54rem;
+      font-size: 0.56rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: #64748b;
@@ -833,14 +825,14 @@
       <div class="hero-kicker">Core Engineering Philosophy</div>
       <h2 class="hero-headline">From messy data to <em>usable products.</em></h2>
       <p class="hero-description">
-        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and production web applications. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use.
+        I build practical data and digital systems — from automated data pipelines and analytical models to geospatial intelligence, machine learning and digital products. My work spans agriculture, football, operations and quantitative modelling, with a focus on turning messy data into something people can actually use.
       </p>
       <div class="hero-triad">
         <span>Robust pipelines.</span>
         <span class="dot">·</span>
         <span>Verifiable models.</span>
         <span class="dot">·</span>
-        <span>Working software.</span>
+        <span>Usable systems.</span>
       </div>
     </div>
 
@@ -859,7 +851,7 @@
             <div class="card-meta">
               <div class="card-top-row">
                 <div class="card-title">Crop Stress Intelligence</div>
-                <span class="badge badge-live">Live Codebase</span>
+                <span class="badge badge-live">Technical System</span>
               </div>
               <div class="card-subtitle">Geospatial / Agricultural Intelligence · Sentinel-2 · CHIRPS · NASA SMAP</div>
             </div>
@@ -905,44 +897,33 @@
               <span class="evidence-pill"><strong>42</strong> registered animals</span>
               <span class="evidence-pill"><strong>23</strong> crop plots</span>
               <span class="evidence-pill"><strong>32,761.27 L</strong> milk output</span>
-              <span class="evidence-pill"><strong>100%</strong> census reconciliation</span>
+              <span class="evidence-pill"><strong>100%</strong> herd census reconciliation</span>
               <span class="evidence-pill"><strong>84+</strong> validation tests</span>
             </div>
 
             <div class="snapshot-slot" style="padding: 0; border: none; background: transparent;">
               <div class="wanza-card-widget">
                 <div class="wanza-widget-top">
-                  <span>Live · Wanza Farm</span>
-                  <span class="live-pill">Current Month</span>
+                  <span>Wanza Farm · Operational Ledger</span>
+                  <span class="live-pill">Source Grounded</span>
                 </div>
-                <div class="wanza-widget-label">Monthly Milk Production</div>
-                <div class="wanza-widget-kpi">7,845 <span>L</span></div>
-                <div class="wanza-badge-pill">▲ Tracked against prior period</div>
-                
-                <svg class="wanza-sparkline" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="wanzaGrad" x1="0" y1="0" x2="0" y2="40" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#15803d" stop-opacity="0.28" />
-                      <stop offset="1" stop-color="#15803d" stop-opacity="0.0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M0 26 C 30 25, 40 30, 70 29 C 95 28, 110 16, 130 17 C 150 18, 160 31, 185 29 C 205 27, 215 11, 230 12 C 245 13, 255 31, 270 29 C 285 27, 295 7, 310 8 C 315 8, 318 13, 320 15 L 320 40 L 0 40 Z" fill="url(#wanzaGrad)"/>
-                  <path d="M0 26 C 30 25, 40 30, 70 29 C 95 28, 110 16, 130 17 C 150 18, 160 31, 185 29 C 205 27, 215 11, 230 12 C 245 13, 255 31, 270 29 C 285 27, 295 7, 310 8 C 315 8, 318 13, 320 15" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="310" cy="8" r="2.8" fill="#15803d" />
-                </svg>
-
+                <div class="wanza-widget-header">
+                  <div class="wanza-widget-label">Total Historical Production</div>
+                  <div class="wanza-widget-kpi">32,761.27 <span>L</span></div>
+                  <div class="wanza-widget-subtext">Verified lactation records reconciled</div>
+                </div>
                 <div class="wanza-widget-footer">
                   <div class="wanza-foot-item">
-                    <span class="wanza-foot-num">32,761 L</span>
-                    <span class="wanza-foot-lbl">Total Recorded</span>
+                    <span class="wanza-foot-num">42</span>
+                    <span class="wanza-foot-lbl">Animals Tracked</span>
                   </div>
                   <div class="wanza-foot-item">
                     <span class="wanza-foot-num">68</span>
                     <span class="wanza-foot-lbl">Lactations</span>
                   </div>
                   <div class="wanza-foot-item">
-                    <span class="wanza-foot-num">42</span>
-                    <span class="wanza-foot-lbl">Tracked Animals</span>
+                    <span class="wanza-foot-num">23</span>
+                    <span class="wanza-foot-lbl">Crop Plots</span>
                   </div>
                 </div>
               </div>
@@ -1029,11 +1010,11 @@
                 <div class="card-title">Crystal Brands Communications</div>
                 <span class="badge badge-live">Client Project</span>
               </div>
-              <div class="card-subtitle">Production Web Platform · Client Deployment</div>
+              <div class="card-subtitle">Commercial Website · Client Deployment</div>
             </div>
 
             <p class="card-description">
-              Production commercial website built for a Kenyan branding, advertising and events company. Focused on commercial service positioning, responsive digital architecture, and structured business enquiry flows.
+              Production commercial website built for a Kenyan branding, advertising and events company. Focused on clear service positioning, responsive presentation, commercial content architecture and business enquiry flows.
             </p>
 
             <div class="evidence-row">
@@ -1128,7 +1109,7 @@
       </div>
     </section>
 
-    <!-- SECTION 03: SKILLS & TECHNOLOGIES -->
+    <!-- SECTION 03: SKILLS & TECHNOLOGIES (CALIBRATED & TRIMMED) -->
     <section>
       <div class="section-header">
         <span class="section-num">03</span>
@@ -1161,7 +1142,7 @@
           <div class="inventory-label">Geospatial & Agri Intelligence</div>
           <div class="inventory-items">
             <p>Remote Sensing · GIS · Geospatial Analytics · Agricultural Data Science</p>
-            <p>Sentinel-2 · Landsat · CHIRPS · NASA SMAP · NDVI · NDMI</p>
+            <p>Sentinel-2 · CHIRPS · NASA SMAP · NDVI</p>
             <p>GeoPandas · Rasterio · xarray · Dask · STAC · QGIS</p>
           </div>
         </div>
@@ -1169,9 +1150,9 @@
         <div class="inventory-row">
           <div class="inventory-label">Data & Application Stack</div>
           <div class="inventory-items">
-            <p>SQLAlchemy · SQLite · DuckDB · PySpark · Docker · Git · GitHub · Pytest</p>
+            <p>SQLAlchemy · SQLite · DuckDB · Git · GitHub · Pytest</p>
             <p>Streamlit · Plotly · Matplotlib · ggplot2 · Tableau · Power BI · Excel</p>
-            <p>BeautifulSoup · Selenium · Playwright · Hugging Face</p>
+            <p>BeautifulSoup · Selenium</p>
           </div>
         </div>
 
@@ -1179,8 +1160,8 @@
           <div class="inventory-label">Domain Experience</div>
           <div class="inventory-items">
             <p>Football Analytics · Player Intelligence · Sports Modelling</p>
-            <p>Agricultural Intelligence · Remote Sensing · Conservation Analytics</p>
-            <p>Data Quality & Reconciliation · Schema Validation · Technical Documentation · Reproducible Workflows</p>
+            <p>Agricultural Intelligence · Remote Sensing</p>
+            <p>Data Quality & Reconciliation · Schema Validation</p>
           </div>
         </div>
 
