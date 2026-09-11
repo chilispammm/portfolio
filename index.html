@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Poppins:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -28,7 +28,7 @@
       --amber: #e5a83b;
       --amber-dim: rgba(229, 168, 59, 0.1);
       
-      --font-name: "DM Serif Display", Georgia, "Times New Roman", serif;
+      --font-name: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --font-serif: "Instrument Serif", Georgia, serif;
@@ -100,18 +100,14 @@
       margin-bottom: 0.45rem;
     }
 
-    /* CHEZ-INSPIRED BRAND NAME WITH CHAMPAGNE-GOLD GRADIENT */
     h1.brand-name {
       font-family: var(--font-name);
-      font-size: 2.9rem;
-      font-weight: 400;
-      letter-spacing: -0.015em;
+      font-size: 2.45rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
       margin-bottom: 0.35rem;
-      line-height: 1.12;
-      background: linear-gradient(135deg, #ffffff 20%, #f6edd9 55%, #dfb743 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
+      line-height: 1.15;
+      color: #f8fafc;
     }
 
     .subtitle {
@@ -436,7 +432,7 @@
       font-weight: 500;
     }
 
-    /* STANDARDIZED SNAPSHOT CONTAINERS */
+    /* STANDARDIZED SNAPSHOT CONTAINERS (EXACT HEIGHT LOCK) */
     .snapshot-slot {
       margin: 0.25rem 0 1.15rem 0;
       border: 1px solid rgba(255, 255, 255, 0.09);
@@ -467,22 +463,26 @@
       display: block;
     }
 
+    /* Crop Stress satellite image */
     .snapshot-img.triage-img {
       object-fit: cover;
       object-position: center;
     }
 
+    /* ChiliAnalysis image - anchored left */
     .snapshot-img.chili-img {
       object-fit: cover;
       object-position: left center;
       background: #000000;
     }
 
+    /* Sportsbooks image */
     .snapshot-img.sports-img {
       object-fit: cover;
       object-position: center 25%;
     }
 
+    /* Crystal brands white frame setup */
     .snapshot-slot.light-frame {
       background: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1109,7 +1109,7 @@
       </div>
     </section>
 
-    <!-- SECTION 03: SKILLS & TECHNOLOGIES (CALIBRATED & TRIMMED) -->
+    <!-- SECTION 03: SKILLS & TECHNOLOGIES -->
     <section>
       <div class="section-header">
         <span class="section-num">03</span>
